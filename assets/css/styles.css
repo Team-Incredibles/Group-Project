@@ -1,4 +1,3 @@
-
 /* GENERAL NOTES: may delete/rework all of this CSS. Was just messing around */
 * {
     font-family: Helvetica, Arial, sans-serif;
@@ -60,4 +59,3 @@ footer h2 {
   .giphy button:hover {
     background-color: black;
   }
-  /* End of Footer Button Styling */
