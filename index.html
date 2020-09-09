@@ -1,36 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/styles.css" />
     <title>Placeholder Title</title>
 </head>
+
 <body>
     <header>
         <h1>
-           <a href="./index.html">Placeholder</a>
+            <a href="./index.html">Placeholder</a>
         </h1>
         <!-- may remove naviagtion from html if not needed -->
         <nav class="nav" id="nav"></nav>
-    
+
     </header>
- 
+
+    <!-- "Image of the Day" Container-->
     <div class="imgDaily" id="imgDaily">
         <h2>Image of the Day</h2>
     </div>
+
+    <!-- Asteroid Area Container -->
     <div class="asteroid" id="asteroid">
         <h2>Asteroid Area</h2>
+        <!-- Text Input and Button -->
+        <input type="text" class="ast" id="ast" />
+        <button class="btn" id="ast-btn" type="submit"></button>
+
     </div>
+
+    <!-- Fact of the Day / "Image of the Day" Description -->
     <div class="content" id="content">
-        <article class="imgDesc" id="imgDesc"></article>
-        <!-- should we filter content into seperate containers and keep the division invisible? -->
-        <article class="fact" id="fact"></article>
+        <!-- Image of the Day Description Container -->
+        <article class="imgDesc" id="imgDesc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, qui.
+            Provident nostrum pariatur consectetur cum maiores? Consectetur eligendi tempora, commodi accusamus
+            voluptates in, modi eos perspiciatis blanditiis suscipit omnis voluptas.</article>
+
+        <!-- should we filter content into seperate containers or just 2 <p> ? -->
+
+        <!-- Fact of the Day Container -->
+        <article class="fact" id="fact">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam quisquam ipsam
+            maxime beatae? Doloremque a eaque ratione omnis aperiam? Autem in tempora veritatis reprehenderit,
+            repudiandae eos excepturi. Temporibus, eaque consectetur.
+        </article>
     </div>
+
+    <!-- Weather Area Container -->
     <div class="weather" id="weather">
         <h2>Weather Area</h2>
     </div>
-<script src="./assets/js/script.js"></script>    
+    <script src="./assets/js/script.js"></script>
 </body>
 <footer class="footer" id="footer">Made with love by Team Incredibles</footer>
+
 </html>
