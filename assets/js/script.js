@@ -10,7 +10,7 @@ $('#add-city').on('click', function() {
 
 
 //IOTD Section
-var iotd = function() {
+var getIotd = function() {
     fetch(`https://api.nasa.gov/planetary/apod?api_key=${nasaKey}`)
     .then(function(response) {
         
@@ -21,12 +21,15 @@ var iotd = function() {
                 var title = data.title
                 var picOtd = data.hdurl
                 
-                
+                iotd(description, title, picOtd)
             
             });
 
         } else {
             console.log('failed to get image of the day')
+            $('#imgOtd').attr('src', './assets/images/alien.png')
+            $('#image-description').text("Sorry! looks like NASA doesn't have an image for today.")
+            $('#iotdTitle').text('')
         };
 
 
@@ -34,4 +37,11 @@ var iotd = function() {
 
 };
 
-iotd();
+var iotd = function(description, title, picOtd) {
+
+    $('#imgOtd').attr('src', picOtd)
+    $('#image-description').text(description)
+    $('#iotdTitle').text(title)
+}
+
+getIotd();
