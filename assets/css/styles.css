@@ -13,19 +13,8 @@
 
 /* Animation Area */
 @keyframes pop-in {
-    0% {
-      opacity: 0;
-      transform: translateY(-4rem) scale(.02);
-    }
-    100% {
-      opacity: 1;
-      transform: none;
-    }
-}
-
-.animate-pop-in {
-    animation: pop-in .8s ease-out forwards;
-    opacity: 0;
+    0% { opacity: 0; transform: translateY(-4rem) scale(.02);}
+    100% {opacity: 1; transform: none;}
 }
 
 @keyframes shaker {
@@ -58,6 +47,11 @@ body {
     height: 100%;
 }
 
+.animate-pop-in {
+    animation: pop-in .8s ease-out forwards;
+    opacity: 0;
+}
+
 .hero {
     display: flex;
     text-align: center;
@@ -83,19 +77,41 @@ body {
 
 /* Main Content Container Area Styling */
 .info-container {
+    max-height: 500px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
 }
 
 .atmos-info {
+    max-height: 500px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
+    text-align: center;
 }
 
 .info-area h2{
     text-align: center;
+}
+
+.info-area h3 {
+    text-align: center;
+    font-size: 23px;
+}
+
+.card-wrapping-0 {
+    border-radius: 5px;
+    border-width: 1px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px 0px;
+    color: hsl(200, 5%, 13%);
+    margin: 3% 3%;
+    padding: 4%;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
 }
 
 .card-wrapping {
@@ -128,12 +144,17 @@ body {
     transition: all 0.5s ease-out;
 }
 
+.btn {
+    width: 20%;
+    margin-top: 2%;
+}
+
 .card-wrapping-2:hover {
     opacity: 0.97;
     box-shadow: rgba(202, 152, 76, 0.6) 0px 2px 12px 0px;
 }
 
-.card-wrapping:hover {
+.card-wrapping:hover, .card-wrapping-0:hover {
     opacity: 0.97;
     box-shadow: rgba(96, 79, 173, 0.6) 0px 2px 12px 0px;
 }
@@ -233,6 +254,12 @@ a:hover::after {
         margin: 0;
     }
 
+    .card-wrapping-0 {
+        text-align: center;
+        margin-left: 25%;
+        width: 50%;
+    }
+
     .card-wrapping {
         text-align: center;
         margin-left: 25%;
@@ -247,6 +274,19 @@ a:hover::after {
 
     .info-container {
         display: inline-block;
+    }
+
+    .atmos-info {
+        display: inline-block;
+        text-align: center;
+        margin-top: 9%;
+        margin-left: 0.2%;
+        width: 100%;
+    }
+
+    .btn {
+        margin-top: 2%;
+        width: 30%;
     }
 
     footer {
