@@ -67,9 +67,11 @@
             <div class="weather-conatiner card-wrapping-2 col-md-6">
                 <div id="weather-info-form" class="weather-info">
                     <!-- Weather City Form Input-->
-                    <input name="city" id="city-search" type="text" class="form-input" placeholder="Enter a Date" />
-                    <input name="state-code" id="state-search" type="text" class="form-input-2" placeholder="Enter a State" />
-                    <button type="submit" id="add-city" value="search" class="btn btn-weather"><span class="oi oi-sun"></span></button>
+                    <form>
+                        <input name="city" id="city-search" type="text" class="form-input" placeholder="Enter a City" />
+                        <input name="state-code" id="state-search" type="text" class="form-input-2" placeholder="Enter a State Code" maxlength="2"/>
+                        <button type="submit" id="add-city" value="search" class="btn btn-weather"><span class="oi oi-sun"></span></button>
+                    </form>
                 </div>
             </div>
         </div>
