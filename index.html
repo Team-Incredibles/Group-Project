@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css" integrity="sha512-9RIcp1f4CE6dEuYX9085tXaEbYd1ap04d2Av1ub/dwuT33WbfbHStDdQ+shKrp5wzZzleh5DOg+7ABSnaQP/nQ==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css"/>
     <link rel="stylesheet" href="./assets/css/styles.css" />
     <title>The Space Dash 🌌</title>
 </head>
@@ -17,21 +18,74 @@
             <div>
                 <img src="./assets/images/Logo-1.png" alt="Website Space-Ship Logo" class="logo-image animate__animated animate__fadeInDownBig"/>
             </div>
-          <h1 class="animate-pop-in">Space Dash</h1>
-          <p class="animate-pop-in">Sattelite and Galactic Information with Ease.</p>
+          <h1 class="animate-pop-in text-uppercase">Space Dash</h1>
+          <p class="animate-pop-in">Sattelite and Galactic Information with Ease</p>
+          <div class="flexbox-break-banner-logo">
+            <div class="flexbox-break-box flexbox-break-box-1" style="transform: translateY(-18.4874px) translateX(-24.9579px) scaleY(0.36) scaleX(0.166218);"></div>
+            <div class="flexbox-break-box flexbox-break-box-2" style="transform: translateY(-19.1136px) translateX(0px) scaleY(0.36) scaleX(0.167784);"></div>
+          </div>
         </div>
     </div>
 
-    <!-- Image of the Day Area -->
-    <div id="img-otd" class="img-otd card-wrapping col-6">
-        <div>
-            <h2>This is a text area</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur deserunt ratione debitis ea repellendus alias error? Totam officia error pariatur cupiditate odio nostrum tempora, animi dolore tempore? Iusto, dicta consectetur.</p>
+    <!-- Image of the Day/Description Area -->
+    <div class="info-container">
+        <div id="img-otd" class="img-otd card-wrapping col-md-6">
+            <div id="img-container">
+                <!-- Insert Image element here using JS-->
+                <!-- Also, in JS add "image of the day" with target_blank link to more Image info -->
+            </div>
+        </div>
+        
+        <!-- Info Area -->
+        <!-- Image description Area-->
+        <div id="info-area" class="info-area card-wrapping col-md-6">
+            <div>
+                <h2>Image Description</h2>
+                <p id="image-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur deserunt ratione debitis ea repellendus alias error? Totam officia error pariatur cupiditate odio nostrum tempora, animi dolore tempore? Iusto, dicta consectetur.</p>
+            </div>
+            <!-- Divider -->
+            <div class="divider-vert" data-content="AND"></div>
+            <!-- Fact Area-->
+            <div>
+                <h2>Space Fact!</h2>
+                <p id="space-facts">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur deserunt ratione debitis ea repellendus alias error? Totam officia error pariatur cupiditate odio nostrum tempora, animi dolore tempore? Iusto, dicta consectetur.</p>
+            </div>
         </div>
     </div>
 
-    
+    <!-- Weather/Asteroid Area -->
+        <div class="atmos-info">
+            <div class="asteroid-container card-wrapping-2 col-md-6">
+                <form id="aster-form-input" class="aster-form">
+                    <!-- Asteroid Form Input -->
+                    <input name="date" id="date" type="text" class="form-input" placeholder="Enter a Date!" />
+                    <button type="submit" class="btn btn-asteroid"><span class="oi oi-moon"></span></button>
+                </form>
+            </div>
+
+            <!-- Weather Area -->
+            <div class="weather-conatiner card-wrapping-2 col-md-6">
+                <div id="weather-info-form" class="weather-info">
+                    <!-- Weather City Form Input-->
+                    <input name="city" id="city-search" type="text" class="form-input" placeholder="Enter a Date" />
+                    <input name="state-code" id="state-search" type="text" class="form-input-2" placeholder="Enter a State" />
+                    <button type="submit" id="add-city" value="search" class="btn btn-weather"><span class="oi oi-sun"></span></button>
+                </div>
+            </div>
+        </div>
+
+    <!-- Footer Area -->
+    <div class="footer-container">
+        <footer class="footer">
+            <a href="https://github.com/Team-Incredibles/Group-Project">Made With ❤️ by Team Incredibles</a>
+            <div class="footer-line">
+                <img src="./assets/images/Logo-1.png" alt="Website Space-Ship Logo" class="logo-image animate__animated animate__rollIn"/>
+            </div>
+        </footer>
+    </div>
+
     <!-- JavaScript Link -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
