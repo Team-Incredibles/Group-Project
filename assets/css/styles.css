@@ -28,11 +28,32 @@
     opacity: 0;
 }
 
-.flexbox-break-box {
-    float: right;
-    background-color: black;
-    width: 100%;
-    height: 100%;
+@keyframes shaker {
+    0% { transform: translate(-3px, 2px) rotate(-3deg); }
+    20% { transform: translate(-5px, 1px) rotate(1deg); }
+    40% { transform: translate(4px, 1px) rotate(-2deg); }
+    60% { transform: translate(-1px, -5px) rotate(1deg); }
+    80% { transform: translate(1px, 9px) rotate(2deg); }
+    100% { transform: translate(5px, -2px) rotate(-3deg); }
+}
+
+@keyframes downward {
+    50% { transform: translateY(15px) rotate(3deg);}
+    100% { transform: translateY(30) rotate(0.2deg);}
+}
+
+@keyframes catch {
+    50% { transform: translateX(25px) rotate(-12deg);}
+    65% { transform: translateY(-15px) rotate(-6deg);}
+    100% { transform: rotate(0.2deg);}
+}
+
+@keyframes upward {
+    0% {}
+}
+
+.logo-area:hover {
+    animation: shaker 0.4s infinite;
 }
 
 /* Body Styling */
@@ -119,15 +140,19 @@ body {
 }
 
 /* Footer Styling */
-.footer-container {
-    display: flex;
-    flex-direction: column;
+footer {
+    position: absolute;
+    width: 100%;
+    bottom: 2%;
 }
 
-footer {
-    flex: 0 0 50px;
-    margin-top: auto;
-    padding: 25px;
+.logo-2 {
+    max-width: 5em;
+}
+
+.logo-area {
+    animation-delay: 0.2s;
+    animation: catch 4.6s 1;
 }
 
 .footer a {
@@ -135,7 +160,7 @@ footer {
     position: relative;
     text-decoration: none;
     transition: color .4s ease-out;
-  }
+}
 
 a::after {
     border-radius: 1em;
@@ -172,7 +197,20 @@ a:hover::after {
     margin-left: .25em;
 }
 
-@media screen and (max-width: 840px) {
+.resources {
+    display: flex;
+    justify-content: space-around;
+    margin: 5px;
+}
+
+@media screen and (max-width: 1200px) {
+    footer {
+        position: absolute;
+        width: 100%;
+        bottom: 5px;
+    }
+}
+@media screen and (max-width: 992px) {
     * {
         font-size: 16px;
     }
@@ -203,7 +241,13 @@ a:hover::after {
         display: inline-block;
     }
 
-    .footer {
-        text-align: center;
+    footer {
+        position: relative;
+        width: 100%;
+        bottom: 0;
+        margin: 5px;
     }
 }
+
+/* Add animation for when rocket is clicked, the user is sent back to the top of the page
+and the logo shoots upwards */

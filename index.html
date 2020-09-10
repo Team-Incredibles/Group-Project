@@ -14,7 +14,7 @@
 
     <!-- Hero Area -->
     <div class="hero bg-gray">
-        <div class="hero-body">
+        <div class="hero-body" id="#">
             <div>
                 <img src="./assets/images/Logo-1.png" alt="Website Space-Ship Logo" class="logo-image animate__animated animate__fadeInDownBig"/>
             </div>
@@ -58,7 +58,7 @@
             <div class="asteroid-container card-wrapping-2 col-md-6">
                 <form id="aster-form-input" class="aster-form">
                     <!-- Asteroid Form Input -->
-                    <input name="date" id="date" type="text" class="form-input" placeholder="Enter a Date!" />
+                    <input name="date" id="date" type="text" class="form-input" placeholder="Enter a Date!">
                     <button type="submit" class="btn btn-asteroid"><span class="oi oi-moon"></span></button>
                 </form>
             </div>
@@ -67,22 +67,24 @@
             <div class="weather-conatiner card-wrapping-2 col-md-6">
                 <div id="weather-info-form" class="weather-info">
                     <!-- Weather City Form Input-->
-                    <input name="city" id="city-search" type="text" class="form-input" placeholder="Enter a Date" />
-                    <input name="state-code" id="state-search" type="text" class="form-input-2" placeholder="Enter a State" />
+                    <input name="city" id="city-search" type="text" class="form-input" placeholder="Enter a Date">
+                    <input name="state-code" id="state-search" type="text" class="form-input" placeholder="Enter a State">
                     <button type="submit" id="add-city" value="search" class="btn btn-weather"><span class="oi oi-sun"></span></button>
                 </div>
             </div>
         </div>
 
     <!-- Footer Area -->
-    <div class="footer-container">
-        <footer class="footer">
+    <footer class="footer">
+        <div class="footer-line">
+            <a href="#" class="logo-area"><img src="./assets/images/Logo-1.png" alt="Website Space-Ship Logo" class="logo-2 animate__animated animate__rollIn"></a>
+        </div>
+        <!-- Links to Resources-->
+        <div class="resources">
             <a href="https://github.com/Team-Incredibles/Group-Project">Made With ❤️ by Team Incredibles</a>
-            <div class="footer-line">
-                <img src="./assets/images/Logo-1.png" alt="Website Space-Ship Logo" class="logo-image animate__animated animate__rollIn"/>
-            </div>
-        </footer>
-    </div>
+            <a href="/">Our Resources and Citing</a>
+        </div>
+    </footer>
 
     <!-- JavaScript Link -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
