@@ -12,7 +12,7 @@ $('#add-city').on('click', function() {
 //IOTD Section
 var getIotd = function() {
     //gets the image of the day and its corresponding information
-    fetch(`https://api.nasa.gov/planetary/apod?date=2020-9-10&api_key=${nasaKey}`)
+    fetch(`https://api.nasa.gov/planetary/apod?api_key=${nasaKey}`)
     .then(function(response) {
         
         if (response.ok) {
