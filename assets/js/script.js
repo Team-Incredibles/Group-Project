@@ -12,7 +12,7 @@ $('#add-city').on('click', function() {
 //IOTD Section
 var getIotd = function() {
     //gets the image of the day and its corresponding information
-    fetch(`https://api.nasa.gov/planetary/apod?api_key=${nasaKey}`)
+    fetch(`https://api.nasa.gov/planetary/apod?date=2020-9-10&api_key=${nasaKey}`)
     .then(function(response) {
         
         if (response.ok) {
@@ -31,7 +31,7 @@ var getIotd = function() {
         } else {
             //if for some reason is not valid an error message is displayed
             $('#imgOtd').attr('src', './assets/images/alien.png')
-            $('#image-description').text("Sorry! looks like NASA doesn't have an image for today.")
+            $('#image-description').text("Sorry! looks like NASA doesn't have an image for today or the Image may not be ready yet.")
             $('#iotdTitle').text('')
         };
 

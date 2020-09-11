@@ -7,10 +7,6 @@
     font-size: 20px;
 }
 
-.iotd {
-    max-width: 100%;
-}
-
 :root {
     --color-1: #f7f8f9;
 }
@@ -143,6 +139,7 @@ body {
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
     text-align: center;
+    margin-top: 10%;
 }
 
 .info-area h2{
