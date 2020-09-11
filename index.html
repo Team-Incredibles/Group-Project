@@ -30,11 +30,13 @@
     <!-- Image of the Day/Description Area -->
     <div class="info-container">
         <div id="img-otd" class="img-otd card-wrapping col-md-6">
-            <div id="img-container">
-                <!-- Insert Image element here using JS-->
-                <!-- Also, in JS add "image of the day" with target_blank link to more Image info -->
-                <img id="imgOtd" class="iotd" src="">
-            </div>
+            <a id='toIotd' href="" target="_blank">
+                <div id="img-container">
+                    <!-- Insert Image element here using JS-->
+                    <!-- Also, in JS add "image of the day" with target_blank link to more Image info -->
+                    <img id="imgOtd" class="iotd" src="">
+                </div>
+            </a>
         </div>
         
         <!-- Info Area -->
@@ -71,7 +73,7 @@
                     <!-- Weather City Form Input-->
                     <form>
                         <input name="city" id="city-search" type="text" class="form-input" placeholder="Enter a City" />
-                        <input name="state-code" id="state-search" type="text" class="form-input-2" placeholder="Enter a State Code" maxlength="2"/>
+                        <input name="state-code" id="state-search" type="text" class="form-input-2" placeholder="Enter Your States Initials" maxlength="2"/>
                         <button type="submit" id="add-city" value="search" class="btn btn-weather"><span class="oi oi-sun"></span></button>
                     </form>
                 </div>
