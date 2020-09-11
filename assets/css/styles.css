@@ -116,6 +116,11 @@ body {
     margin: 20px 0 15px;    
 }
 
+.hero-body p {
+    font-size: 21px;
+    font-weight: 500;   
+}
+
 .logo-image {
     position: relative;
     float: left;
@@ -196,6 +201,10 @@ body {
     margin-top: 2%;
 }
 
+.popover {
+    display: inline;
+}
+
 .card-wrapping-2:hover {
     opacity: 0.97;
     box-shadow: rgba(202, 152, 76, 0.6) 0px 2px 12px 0px;
@@ -211,6 +220,7 @@ body {
 footer {
     position: relative;
     width: 100%;
+    margin-top: 4%;
     bottom: 2%;
 }
 
@@ -301,6 +311,10 @@ footer {
         padding: 5%;
     }
 
+    .hero-body p {
+        font-size: 16px;
+    }
+
     svg {
         display: flex;
         transform: translateY(15px);
@@ -350,6 +364,11 @@ footer {
     .btn {
         margin-top: 2%;
         width: 30%;
+        visibility: visible;
+    }
+
+    .popover {
+        visibility: hidden;
     }
 
     footer {

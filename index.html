@@ -18,22 +18,21 @@
             <div>
                 <img src="./assets/images/Logo-1.png" alt="Website Space-Ship Logo" class="logo-image animate__animated animate__fadeInDownBig"/>
             </div>
-        <!-- Space Dash has been manipulated as an SVG to allow Animation-->
-        <svg viewBox="0 0 250 20">
-            <symbol id="s-text">
-                <text text-anchor="middle" x="56.6%" y="80%" font-size="20px" class="space-text">Space Dash</text>
-            </symbol>
-            <g class = "g-ants">
-                <use xlink:href="#s-text" class="text-copy"></use>
-                <use xlink:href="#s-text" class="text-copy"></use>
-                <use xlink:href="#s-text" class="text-copy"></use>
-                <use xlink:href="#s-text" class="text-copy"></use>
-                <use xlink:href="#s-text" class="text-copy"></use>
-            </g>
-        </svg>
-          <p class= "animate-pop-in">Galactic Information with Ease</p>
-          <div class="flexbox-break-banner-logo">
-          </div>
+            <!-- Space Dash has been manipulated as an SVG to allow Animation-->
+            <svg viewBox="0 0 250 20">
+                <symbol id="s-text">
+                    <text text-anchor="middle" x="56.6%" y="80%" font-size="20px" class="space-text animate-pop-in">Space Dash</text>
+                </symbol>
+                <!-- SVG Text 'Ant/Divider' Animation -->
+                <g class = "g-dividers">
+                    <use href="#s-text" class="text-copy"></use>
+                    <use href="#s-text" class="text-copy"></use>
+                    <use href="#s-text" class="text-copy"></use>
+                    <use href="#s-text" class="text-copy"></use>
+                    <use href="#s-text" class="text-copy"></use>
+                </g>
+            </svg>
+            <p class= "animate-pop-in">Galactic Information with Ease</p>
         </div>
     </div>
 
@@ -70,22 +69,37 @@
     <div class="atmos-info">
         <div class="asteroid-container card-wrapping-2 col-md-6">
             <h3>Closest Asteroids, Any Day</h3>
-            <form id="aster-form-input form-autocomplete" class="aster-form">
+            <form id="aster-form-input" class="aster-form">
                 <!-- Asteroid Form Input -->
                 <input name="date" id="date" type="date" class="form-input">
-                <button type="submit" class="btn btn-asteroid"><span class="oi oi-moon"></span></button>
-            </form>
-        </div>
+                <div class="popover popover-right">
+                    <button type="submit" class="btn btn-asteroid"><span class="oi oi-globe"></span></button>
+                    <div class="popover-container">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>What Does this Do?</h4>
+                            </div>
+                            <div class="card-body">
+                                <p>This API grabs information from Nasa's
+                                NeoWs (Near Earth Object Web Service) with updated information on close-by Asteroids
+                                on a specific date and data for the following 7 days.
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                            <a href="https://www.jpl.nasa.gov/" target="_blank">More Info Here!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                
 
-        <!-- Weather Area -->
+        <!-- Mars Weather Area -->
         <div class="weather-conatiner card-wrapping-2 col-md-6">
             <div id="weather-info-form" class="weather-info">
                 <h3>Weather on Mars</h3>
-                <!-- Weather City Form Input-->
+                <!-- Mars Weather & Forecast Form Input-->
                 <!-- Sol and Date Needed for Mars Weather Now "Or" Auto complete areas with recent one with click of a button -->
-                <input name="city" id="city-search" type="text" class="form-input" placeholder="Enter a City">
-                <input name="state-code" id="state-search" type="text" class="form-input" placeholder="Enter State Initials" maxlength="2">
-                <button type="submit" id="add-city" value="search" class="btn btn-weather"><span class="oi oi-sun"></span></button>
+                <button type="submit" id="add-city" value="search" class="btn btn-weather"><span class="oi oi-cloudy"></span></button>
             </div>
         </div>
     </div>
@@ -97,7 +111,7 @@
         </div>
         <!-- Links to Resources-->
         <div class="resources">
-            <a href="https://github.com/Team-Incredibles/Group-Project">Made With ❤️ by Team Incredibles</a>
+            <a href="https://github.com/Team-Incredibles/Group-Project" target="_blank">Made With ❤️ by Team Incredibles</a>
             <a href="./index.html">Our Resources and Citing</a>
         </div>
     </footer>
