@@ -7,10 +7,6 @@
     font-size: 20px;
 }
 
-.iotd {
-    max-width: 100%;
-}
-
 :root {
     --color-1: #f7f8f9;
 }
@@ -131,16 +127,14 @@ body {
 
 /* Main Content Container Area Styling */
 .info-container {
-    max-height: 500px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     grid-gap: 10px;
 }
 
 .atmos-info {
-    max-height: 500px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     grid-gap: 10px;
     text-align: center;
 }
