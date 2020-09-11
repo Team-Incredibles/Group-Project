@@ -12,7 +12,7 @@
 
 /* Animation Area */
 @keyframes pop-in {
-    0% { opacity: 0; transform: translateY(-4rem) scale(.02);}
+    0% { opacity: 0; transform: translateY(-1rem) scale(.02);}
     100% { opacity: 1; transform: none;}
 }
 
@@ -58,8 +58,8 @@ svg {
 }
 
 .text-copy:nth-child(1){
-	stroke: #ffffff;
-	animation-delay: -1;
+	stroke: #000000;
+	animation-delay: -1s;
 }
 
 .text-copy:nth-child(2){
@@ -68,7 +68,7 @@ svg {
 }
 
 .text-copy:nth-child(3){
-	stroke: orange;
+	stroke: #ffa500;
 	animation-delay: -3s;
 }
 
@@ -89,7 +89,8 @@ svg {
 
 /* Body/JumboTron Styling */
 body {
-    height: 100%;
+    min-height: 100%;
+    font-size: 20px;
 }
 
 .iotd {
@@ -115,27 +116,29 @@ body {
     margin: 20px 0 15px;    
 }
 
+.hero-body p {
+    font-size: 21px;
+    font-weight: 500;   
+}
+
 .logo-image {
-    margin-top: 20px;
+    position: relative;
     float: left;
-    max-width: 5em;
+    max-width: 9%;
     animation-delay: 0.3s;
-    outline: none;
 }
 /* Body/JumboTron Styling End */
 
 /* Main Content Container Area Styling */
 .info-container {
-    max-height: 500px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     grid-gap: 10px;
 }
 
 .atmos-info {
-    max-height: 500px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     grid-gap: 10px;
     text-align: center;
 }
@@ -198,6 +201,10 @@ body {
     margin-top: 2%;
 }
 
+.popover {
+    display: inline;
+}
+
 .card-wrapping-2:hover {
     opacity: 0.97;
     box-shadow: rgba(202, 152, 76, 0.6) 0px 2px 12px 0px;
@@ -211,8 +218,9 @@ body {
 
 /* Footer Styling */
 footer {
-    position: absolute;
+    position: relative;
     width: 100%;
+    margin-top: 4%;
     bottom: 2%;
 }
 
@@ -285,7 +293,7 @@ footer {
 /* Media Query Adjustments 1200px*/
 @media screen and (max-width: 1200px) {
     footer {
-        position: absolute;
+        position: relative;
         width: 100%;
         bottom: 5px;
     }
@@ -300,29 +308,45 @@ footer {
     .hero {
         display: flex;
         text-align: center;
+        padding: 5%;
+    }
+
+    .hero-body p {
+        font-size: 16px;
+    }
+
+    svg {
+        display: flex;
+        transform: translateY(15px);
+        width: 89%;
+        height: 50%;
+    }
+
+    .space-text {
+        font-size: 1.13rem;
+        transform: translateY(5%);
     }
 
     .logo-image {
-        float: none;
-        margin: 0;
+        display: none;
     }
 
     .card-wrapping-0 {
         text-align: center;
-        margin-left: 25%;
-        width: 50%;
+        margin-left: 5%;
+        width: 90%;
     }
 
     .card-wrapping {
         text-align: center;
-        margin-left: 25%;
-        width: 50%;
+        margin-left: 5%;
+        width: 90%;
     }
     
     .card-wrapping-2 {
         text-align: center;
-        margin-left: 25%;
-        width: 50%;
+        margin-left: 5%;
+        width: 90%;
     }
 
     .info-container {
@@ -340,6 +364,11 @@ footer {
     .btn {
         margin-top: 2%;
         width: 30%;
+        visibility: visible;
+    }
+
+    .popover {
+        visibility: hidden;
     }
 
     footer {
