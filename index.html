@@ -18,8 +18,20 @@
             <div>
                 <img src="./assets/images/Logo-1.png" alt="Website Space-Ship Logo" class="logo-image animate__animated animate__fadeInDownBig"/>
             </div>
-          <h1 class="animate-pop-in text-uppercase">Space Dash</h1>
-          <p class="animate-pop-in">Galactic Information with Ease</p>
+        <!-- Space Dash has been manipulated as an SVG to allow Animation-->
+        <svg viewBox="0 0 300 20">
+            <symbol id="s-text">
+                <text text-anchor="middle" x="50%" y="80%">Space Dash</text>
+            </symbol>
+            <g class = "g-ants">
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+            </g>
+        </svg>
+          <p class= "animate-pop-in">Galactic Information with Ease</p>
           <div class="flexbox-break-banner-logo">
             <div class="flexbox-break-box flexbox-break-box-1" style="transform: translateY(-18.4874px) translateX(-24.9579px) scaleY(0.36) scaleX(0.166218);"></div>
             <div class="flexbox-break-box flexbox-break-box-2" style="transform: translateY(-19.1136px) translateX(0px) scaleY(0.36) scaleX(0.167784);"></div>
@@ -58,7 +70,7 @@
         <div class="atmos-info">
             <div class="asteroid-container card-wrapping-2 col-md-6">
                 <h3>Closest Asteroids, Any Day</h3>
-                <form id="aster-form-input" class="aster-form">
+                <form id="aster-form-input form-autocomplete" class="aster-form">
                     <!-- Asteroid Form Input -->
                     <input name="date" id="date" type="date" class="form-input">
                     <button type="submit" class="btn btn-asteroid"><span class="oi oi-moon"></span></button>
