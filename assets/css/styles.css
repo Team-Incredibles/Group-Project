@@ -59,8 +59,8 @@ svg {
 }
 
 .text-copy:nth-child(1){
-	stroke: #ffffff;
-	animation-delay: -1;
+	stroke: #000000;
+	animation-delay: -1s;
 }
 
 .text-copy:nth-child(2){
@@ -69,7 +69,7 @@ svg {
 }
 
 .text-copy:nth-child(3){
-	stroke: orange;
+	stroke: #ffa500;
 	animation-delay: -3s;
 }
 
@@ -301,9 +301,14 @@ footer {
         text-align: center;
     }
 
+    svg {
+        display: flex;
+        width: 89%;
+        height: 30%;
+    }
+
     .logo-image {
-        float: none;
-        margin: 0;
+        display: none;
     }
 
     .card-wrapping-0 {
