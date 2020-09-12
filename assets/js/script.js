@@ -1,6 +1,6 @@
 var nasaKey = 'QFBaySAYAbefXA8kgBoxfYWOYqWKcnmCMXq58czU'
 var today = moment().format('YYYY-MM-DD')
-
+var imgProgress = document.querySelector('#loadingCircle');
 
 // Weather section
 $('#add-city').on('click', function() { 
@@ -33,13 +33,15 @@ var getIotd = function() {
         } else {
             // If for any reason the request is not valid an error message is displayed
             $('#imgOtd').attr('src', './assets/images/alien.png')
-            $('#image-description').text("Sorry! looks like NASA doesn't have an image for today or the Image may not be ready yet.")
-            $('#iotdTitle').text('')
-        };
-
-
-    });
-
+            $('#image-description').text("Sorry! It looks like NASA doesn't have an image for today.")
+            $('#iotdTitle').text(status.statusText)
+        }
+    })
+    .catch(function(error) {
+        // To notify user of connection issue to Nasa API
+        $('#image-description').text("Sorry! It looks like your device is having issues connecting to Nasa's API. Retry your connection or come back later! Thank you.")
+        $('#iotdTitle').text('Error: ' + status.statusText);
+    })
 };
 
 var iotd = function(description, title, picOtd) {
@@ -59,7 +61,6 @@ var getMars = function() {
     // Get high, low, and avg temp
     // Get season
     // Get sol and earth date
-
 }
 
 //rover image section
