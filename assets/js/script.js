@@ -1,4 +1,6 @@
 var nasaKey = 'QFBaySAYAbefXA8kgBoxfYWOYqWKcnmCMXq58czU'
+var today = moment().format('YYYY-MM-DD')
+
 
 // Weather section
 $('#add-city').on('click', function() { 
@@ -12,7 +14,7 @@ $('#add-city').on('click', function() {
 // IOTD Section
 var getIotd = function() {
     // Gets the image of the day and its corresponding information
-    fetch(`https://api.nasa.gov/planetary/apod?api_key=${nasaKey}`)
+    fetch(`https://api.nasa.gov/planetary/apod?date=${today}&api_key=${nasaKey}`)
     .then(function(response) {
         
         if (response.ok) {
@@ -29,7 +31,7 @@ var getIotd = function() {
             });
 
         } else {
-            // If for some reason is not valid an error message is displayed
+            // If for any reason the request is not valid an error message is displayed
             $('#imgOtd').attr('src', './assets/images/alien.png')
             $('#image-description').text("Sorry! looks like NASA doesn't have an image for today or the Image may not be ready yet.")
             $('#iotdTitle').text('')
@@ -59,5 +61,7 @@ var getMars = function() {
     // Get sol and earth date
 
 }
+
+//rover image section
 
 getIotd();
