@@ -2,6 +2,9 @@
 var nasaKey = 'QFBaySAYAbefXA8kgBoxfYWOYqWKcnmCMXq58czU'
 var imgProgress = document.querySelector('#loadingCircle');
 
+// Parralax Scrolling Animation
+var rellax = new Rellax('.rellax');
+
 // Date format for API
 // Current Date from Moment
 // Temporary > Can be deleted if never used in project
@@ -63,7 +66,7 @@ $('#add-asteroid').on('click', function () {
 });
 
 // Mars Weather section
-$('#add-weather').on('click', function() { 
+$('#add-weather').on('click', function() {
     event.preventDefault();
     console.log('Weather button clicked');
 });
