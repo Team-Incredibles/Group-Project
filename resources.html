@@ -8,39 +8,46 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css"
         integrity="sha512-9RIcp1f4CE6dEuYX9085tXaEbYd1ap04d2Av1ub/dwuT33WbfbHStDdQ+shKrp5wzZzleh5DOg+7ABSnaQP/nQ=="
         crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/styles-2.css">
         <!-- Title -->
     <title>Space Dash - Resources and Citing</title>
 </head>
-
 <body>
+
     <!-- Page Heading -->
     <header>
-        <h1>Resources used in the Space Dash:</h1>
+        <div class="header-container">
+        <h1 class="text-uppercase big-text">Resources Used</h1>
+        </div>
     </header>
 
     <!-- Main Content / Resource List-->
     <article>
         <!-- NASA API Resource -->
-        <h3>
-            <a href="https://api.nasa.gov/" target="_blank">NASA APIs</a>
-        </h3>
+        <div class="api-title">
+            <h3>
+                <a class="text-uppercase big-text nasa-api-text" href="https://api.nasa.gov/" target="_blank">NASA APIs</a>
+            </h3>
+        </div>
+        
         <p>
             <!-- Unordered List for APIs -->
         <ul>
             <!-- APOD API -->
             <li>
-                <a href="https://apod.nasa.gov/apod/astropix.html" target="_blank">APOD: Astronomy Picture of the
+                <a class="li-text" href="https://apod.nasa.gov/apod/astropix.html" target="_blank">APOD: Astronomy Picture of the
                     Day</a>
                 <p>Our team used this API to pull the images you see in "Image of the Day!"</p>
             </li>
             <!-- InSight API -->
             <li>
-                <a href="https://mars.nasa.gov/insight/weather/" target="_blank">InSight: Mars Weather Service API</a>
+                <a class="li-text" href="https://mars.nasa.gov/insight/weather/" target="_blank">InSight: Mars Weather Service API</a>
                 <p></p>
             </li>
             <!-- Asteroid NeoWS API -->
             <li>
-                <a href="https://cneos.jpl.nasa.gov/" target="_blank">Asteroid NeoWs: Near Earth Object Web Service</a>
+                <a class="li-text" href="https://cneos.jpl.nasa.gov/" target="_blank">Asteroid NeoWs: Near Earth Object Web Service</a>
                 <p>
                     You rock! Our team wanted to show your closest competition.
                 </p>
@@ -48,5 +55,6 @@
         </ul>
         </p>
     </article>
+
 </body>
 </html>
