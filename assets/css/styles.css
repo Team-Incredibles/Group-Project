@@ -103,7 +103,7 @@ body {
 }
 
 .hero {
-    background: #000 url(/assets/images/earth-image.jpg) center no-repeat;
+    background: #000 url(../images/earth-image.jpg) center no-repeat;
     background-size: 100%;
     background-position-x: 200px;
     position: relative;
