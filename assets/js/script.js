@@ -1,15 +1,19 @@
+// Global Variables
 var nasaKey = 'QFBaySAYAbefXA8kgBoxfYWOYqWKcnmCMXq58czU'
-var today = moment().format('YYYY-MM-DD')
+
 var imgProgress = document.querySelector('#loadingCircle');
 
-// Weather section
-$('#add-city').on('click', function() {
-    event.preventDefault();
-    console.log('Weather button clicked');
-});
+// Parralax Scrolling Animation
+var rellax = new Rellax('.rellax');
+var today = moment().format('YYYY-MM-DD')
 
 
-
+// To show a Loading Bar while POTD is being fetched and returned
+document.onreadystatechange = function() {
+    if (document.readyState === 'complete') {
+        imgProgress.style.display = 'none';
+    }
+}
 
 // IOTD Section
 $(document).ready(function() {
@@ -54,6 +58,20 @@ $(document).ready(function() {
 });
 // End IOTD section
 
+
+// Asteroid Section
+$('#add-asteroid').on('click', function () {
+    event.preventDefault();
+    console.log('Asteroid button clicked');
+});
+
+// Mars Weather section
+$('#add-weather').on('click', function() {
+    event.preventDefault();
+    console.log('Weather button clicked');
+});
+
+
 // Mars weather section
 var getMars = function() {
     
@@ -61,8 +79,10 @@ var getMars = function() {
     // Get high, low, and avg temp
     // Get season
     // Get sol and earth date
+
 }
 
 //rover image section
 
 getIotd();
+

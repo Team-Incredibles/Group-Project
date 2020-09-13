@@ -13,8 +13,8 @@
 <body>
 
     <!-- Hero Area -->
-    <div class="hero bg-gray">
-        <div class="hero-body" id="#">
+    <div class="hero bg-gray" id="#">
+        <div class="hero-body">
             <div>
                 <img src="./assets/images/Logo-1.png" alt="Website Space-Ship Logo" class="logo-image animate__animated animate__fadeInDownBig"/>
             </div>
@@ -39,6 +39,7 @@
     <!-- Image of the Day/Description Area -->
     <div class="info-container">
         <div id="img-otd" class="img-otd card-wrapping-0 col-md-6">
+            <div class="loading loading-lg" id="loadingCircle"></div>
             <a id='toIotd' href="" target="_blank">
                 <div id="img-container">
                     <!-- Inserted Image element using JS-->
@@ -72,8 +73,8 @@
             <form id="aster-form-input" class="aster-form">
                 <!-- Asteroid Form Input -->
                 <input name="date" id="date" type="date" class="form-input">
-                <div class="popover popover-right">
-                    <button type="submit" class="btn btn-asteroid"><span class="oi oi-globe"></span></button>
+                <div class="popover popover-top">
+                    <button type="submit" id="add-asteroid" class="btn btn-asteroid"><span class="oi oi-globe"></span></button>
                     <div class="popover-container">
                         <div class="card">
                             <div class="card-header">
@@ -86,7 +87,7 @@
                                 </p>
                             </div>
                             <div class="card-footer">
-                            <a href="https://www.jpl.nasa.gov/" target="_blank">More Info Here!</a>
+                            <a href="https://cneos.jpl.nasa.gov/" target="_blank">More Info Here!</a>
                             </div>
                         </div>
                     </div>
@@ -99,7 +100,25 @@
                 <h3>Weather on Mars</h3>
                 <!-- Mars Weather & Forecast Form Input-->
                 <!-- Sol and Date Needed for Mars Weather Now "Or" Auto complete areas with recent one with click of a button -->
-                <button type="submit" id="add-city" value="search" class="btn btn-weather"><span class="oi oi-cloudy"></span></button>
+                <div class="popover popover-top">
+                    <button type="submit" id="add-weather" value="search" class="btn btn-weather"><span class="oi oi-cloudy"></span></button>
+                    <div class="popover-container">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>What Does this Do?</h4>
+                            </div>
+                            <div class="card-body">
+                                <p>This API grabs information from Nasa's
+                                InSight Mars lander taking continuous weather measurements
+                                 on the surface of Mars at Elysium Planitia.
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                            <a href="https://mars.nasa.gov/insight/weather/" target="_blank">More Info Here!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -112,13 +131,14 @@
         <!-- Links to Resources-->
         <div class="resources">
             <a href="https://github.com/Team-Incredibles/Group-Project" target="_blank">Made With ❤️ by Team Incredibles</a>
-            <a href="./details.html">Our Resources and Citing</a>
+            <a href="./resources.html">Our Resources and Citing</a>
         </div>
     </footer>
 
     <!-- JavaScript Link -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js" integrity="sha512-f5HTYZYTDZelxS7LEQYv8ppMHTZ6JJWglzeQmr0CVTS70vJgaJiIO15ALqI7bhsracojbXkezUIL+35UXwwGrQ==" crossorigin="anonymous"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
