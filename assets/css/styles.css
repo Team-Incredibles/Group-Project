@@ -90,11 +90,24 @@ svg {
 /* Body/JumboTron Styling */
 body {
     min-height: 100%;
-    font-size: 20px;
+    font-size: 26px;
+    background: #000 url(../images/stars-image.jpg) center;
 }
 
 .iotd {
     max-width: 100%;
+}
+
+#img-container{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+iframe {
+    border: none;
+    flex-grow: 1;
+    min-height: 50vh;
 }
 
 .animate-pop-in {
@@ -104,6 +117,8 @@ body {
 
 .hero {
     background: #000 url(../images/earth-image.jpg) center no-repeat;
+    mask-image: none;
+    -webkit-mask-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1));
     background-size: 100%;
     background-position-x: 200px;
     position: relative;
@@ -119,13 +134,12 @@ body {
 
 .hero-body h1, p {
     margin: 20px 0 15px;
-    color: black;
 }
 
 .hero-body p {
     font-size: 21px;
     font-weight: 500;
-    color: white;  
+    color: white;
 }
 
 .logo-image {
@@ -152,6 +166,17 @@ body {
     text-align: center;
 }
 
+h2,
+h3,
+p
+ {
+    color: white;
+}
+
+.fact-container {
+    text-align: center;
+}
+
 .info-area h2{
     text-align: center;
 }
@@ -164,6 +189,7 @@ body {
 .card-wrapping-0 {
     border-radius: 5px;
     border-width: 1px;
+    background-color: rgba(78, 72, 72, 0.1);
     box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px 0px;
     color: hsl(200, 5%, 13%);
     margin: 3% 3%;
@@ -179,6 +205,7 @@ body {
     opacity: 0.8;
     border-radius: 5px;
     border-width: 1px;
+    background-color: rgba(78, 72, 72, 0.1);
     box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px 0px;
     color: hsl(200, 5%, 13%);
     margin: 3% 3%;
@@ -194,6 +221,23 @@ body {
     opacity: 0.8;
     border-radius: 5px;
     border-width: 1px;
+    background-color: rgba(78, 72, 72, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px 0px;
+    color: hsl(200, 5%, 13%);
+    margin: 3% 3%;
+    padding: 4%;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+
+.card-wrapping-3 {
+    opacity: 0.8;
+    border-radius: 5px;
+    border-width: 1px;
+    background-color: rgba(78, 72, 72, 0.1);
     box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px 0px;
     color: hsl(200, 5%, 13%);
     margin: 3% 3%;
@@ -214,12 +258,16 @@ body {
     display: inline;
 }
 
+.card-body p {
+    color: black;
+}
+
 .card-wrapping-2:hover {
     opacity: 0.97;
     box-shadow: rgba(202, 152, 76, 0.6) 0px 2px 12px 0px;
 }
 
-.card-wrapping:hover, .card-wrapping-0:hover {
+.card-wrapping:hover, .card-wrapping-0:hover, .card-wrapping-3:hover {
     opacity: 0.97;
     box-shadow: rgba(96, 79, 173, 0.6) 0px 2px 12px 0px;
 }
@@ -235,6 +283,8 @@ footer {
 
 .logo-2 {
     max-width: 5em;
+    background-color: white;
+    border-radius: 75%;
 }
 
 .logo-area {
@@ -251,7 +301,7 @@ footer {
 }
 
 .footer a {
-    color: black;
+    color: white;
     position: relative;
     text-decoration: none;
     transition: color .4s ease-out;
@@ -259,7 +309,7 @@ footer {
 
 .footer a::after {
     border-radius: 1em;
-    border-top: 1px solid hsl(200, 5%, 13%);;
+    border-top: 1px solid hsl(0, 0%, 100%);;
     content: "";
     position: absolute;
     right: 100%;
@@ -281,7 +331,7 @@ footer {
 .footer-line::before, .footer-line::after {
     content: '';
     flex: 1;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid white;
 }
 
 .footer-line::before {
@@ -298,6 +348,23 @@ footer {
     margin: 5px;
 }
 /* Footer Styling End*/
+
+/* Media Query Adjustments 1900px*/
+@media screen and (max-width: 1900px) {
+    .img-otd {
+        max-height: 42.9vh;
+    }
+
+    .iotd {
+        max-height: 38.9vh;
+        width: 100%;
+    }
+
+    .info-area {
+        overflow: auto;
+        max-height: 42.9vh;
+    }
+}
 
 /* Media Query Adjustments 1200px*/
 @media screen and (max-width: 1200px) {
@@ -337,6 +404,22 @@ footer {
         transform: translateY(5%);
     }
 
+    .fact-container {
+        margin-left: 10%;
+        width: 80%;
+    }
+
+    .img-otd {
+        max-height: none;
+        min-height: none;
+    }
+
+    .iotd {
+        max-height: none;
+        width: 100%;
+        min-height: none;
+    }
+
     .logo-image {
         display: none;
     }
@@ -361,6 +444,10 @@ footer {
 
     .info-container {
         display: inline-block;
+    }
+
+    .info-area p {
+        font-size: 16px;
     }
 
     .atmos-info {
