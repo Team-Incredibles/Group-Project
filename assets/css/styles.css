@@ -369,7 +369,7 @@ footer {
 /* Media Query Adjustments 992px*/
 @media screen and (max-width: 1396px) {
     * {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .hero {
@@ -380,7 +380,7 @@ footer {
     }
 
     .hero-body p {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     svg {
@@ -435,10 +435,6 @@ footer {
 
     .info-container {
         display: inline-block;
-    }
-
-    .info-area p {
-        font-size: 16px;
     }
 
     .atmos-info {
