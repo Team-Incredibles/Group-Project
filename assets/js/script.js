@@ -4,7 +4,8 @@ var nasaKey = 'QFBaySAYAbefXA8kgBoxfYWOYqWKcnmCMXq58czU'
 var imgProgress = document.querySelector('#loadingCircle');
 
 // Parralax Scrolling Animation
-var rellax = new Rellax('.rellax');
+//var rellax = new Rellax('.rellax');
+
 var today = moment().format('YYYY-MM-DD')
 
 
@@ -25,12 +26,13 @@ $(document).ready(function() {
             response.json().then(function (data) {
                 
             // Gets the data we need and stores them in variables
+            var mediaType = data.media_type
             var description = data.explanation
             var title = data.title
-            var picOtd = data.hdurl
+            var picOtd = data.url
                 
             // Passes that data to the iotd() function
-            iotd(description, title, picOtd)
+            iotd(mediaType, description, title, picOtd)
             
         });
 
@@ -48,12 +50,18 @@ $(document).ready(function() {
 
     });
 
-    var iotd = function(description, title, picOtd) {
-        // Puts data from the getIotd() function in its correct places on the page
-        $('#imgOtd').attr('src', picOtd)
+    var iotd = function(mediaType, description, title, picOtd) {
+        // Puts all the iotd data in its correct places on the page
+        
         $('#image-description').text(description)
         $('#iotdTitle').text(title)
         $('#toIotd').attr('href', picOtd)
+
+        if (mediaType === 'video') {
+            $('#img-container').append(`<iframe src='${picOtd}'  style="border: none;"></iframe>`)
+        } else if (mediaType === 'image') {
+            $('#imgOtd').attr('src', picOtd)
+        }
     }
 });
 // End IOTD section
@@ -84,5 +92,4 @@ var getMars = function() {
 
 //rover image section
 
-getIotd();
 
