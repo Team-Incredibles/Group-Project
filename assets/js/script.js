@@ -1,64 +1,95 @@
+// Global Variables
 var nasaKey = 'QFBaySAYAbefXA8kgBoxfYWOYqWKcnmCMXq58czU'
 
-//Weather section
-$('#add-city').on('click', function() { 
+var imgProgress = document.querySelector('#loadingCircle');
+
+// Parralax Scrolling Animation
+//var rellax = new Rellax('.rellax');
+
+var today = moment().format('YYYY-MM-DD')
+
+
+// To show a Loading Bar while POTD is being fetched and returned
+document.onreadystatechange = function() {
+    if (document.readyState === 'complete') {
+        imgProgress.style.display = 'none';
+    }
+}
+
+// IOTD Section
+$(document).ready(function() {
+    // Gets the image of the day and its corresponding information
+    fetch(`https://api.nasa.gov/planetary/apod?date=${today}&api_key=${nasaKey}`)
+    .then(function(response) {
+    
+        if (response.ok) {
+            response.json().then(function (data) {
+                
+            // Gets the data we need and stores them in variables
+            var mediaType = data.media_type
+            var description = data.explanation
+            var title = data.title
+            var picOtd = data.url
+                
+            // Passes that data to the iotd() function
+            iotd(mediaType, description, title, picOtd)
+            
+        });
+
+        } else {
+            // If for any reason the request is not valid an error message is displayed
+            $('#imgOtd').attr('src', './assets/images/alien.png')
+            $('#image-description').text("Sorry! It looks like NASA doesn't have an image for today.")
+            $('#iotdTitle').text(status.statusText)
+        }
+    })
+    .catch(function(error) {
+        // To notify user of connection issue to Nasa API
+        $('#image-description').text("Sorry! It looks like your device is having issues connecting to Nasa's API. Retry your connection or come back later! Thank you.")
+        $('#iotdTitle').text('Error: ' + status.statusText);
+
+    });
+
+    var iotd = function(mediaType, description, title, picOtd) {
+        // Puts all the iotd data in its correct places on the page
+        
+        $('#image-description').text(description)
+        $('#iotdTitle').text(title)
+        $('#toIotd').attr('href', picOtd)
+
+        if (mediaType === 'video') {
+            $('#img-container').append(`<iframe src='${picOtd}'  style="border: none;"></iframe>`)
+        } else if (mediaType === 'image') {
+            $('#imgOtd').attr('src', picOtd)
+        }
+    }
+});
+// End IOTD section
+
+
+// Asteroid Section
+$('#add-asteroid').on('click', function () {
+    event.preventDefault();
+    console.log('Asteroid button clicked');
+});
+
+// Mars Weather section
+$('#add-weather').on('click', function() {
     event.preventDefault();
     console.log('Weather button clicked');
 });
 
 
-
-
-//IOTD Section
-var getIotd = function() {
-    //gets the image of the day and its corresponding information
-    fetch(`https://api.nasa.gov/planetary/apod?api_key=${nasaKey}`)
-    .then(function(response) {
-        
-        if (response.ok) {
-            response.json().then(function (data) {
-                
-                //gets the data we need and stores them in variables
-                var description = data.explanation
-                var title = data.title
-                var picOtd = data.hdurl
-                
-                //passes that data to the iotd() function
-                iotd(description, title, picOtd)
-            
-            });
-
-        } else {
-            //if for some reason is not valid an error message is displayed
-            $('#imgOtd').attr('src', './assets/images/alien.png')
-            $('#image-description').text("Sorry! looks like NASA doesn't have an image for today.")
-            $('#iotdTitle').text('')
-        };
-
-
-    });
-
-};
-
-var iotd = function(description, title, picOtd) {
-    //puts data from the getIotd() function in its correct places on the page
-    $('#imgOtd').attr('src', picOtd)
-    $('#image-description').text(description)
-    $('#iotdTitle').text(title)
-    $('#toIotd').attr('href', picOtd)
-
-}
-//end IOTD section
-
-//mars weather section
+// Mars weather section
 var getMars = function() {
     
-    //get horizontal wind speed
-    //get high, low, and avg temp
-    //get season
-    //get sol and earth date
+    // Get horizontal wind speed
+    // Get high, low, and avg temp
+    // Get season
+    // Get sol and earth date
 
 }
 
+//rover image section
 
-getIotd();
+
