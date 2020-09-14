@@ -94,7 +94,19 @@ body {
 }
 
 .iotd {
-    max-width: 100%;
+    max-width: 100%; 
+}
+
+#img-container{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+iframe {
+    border: none;
+    flex-grow: 1;
+    min-height: 50vh;
 }
 
 .animate-pop-in {
