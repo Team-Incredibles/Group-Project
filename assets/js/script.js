@@ -4,7 +4,7 @@ var nasaKey = 'QFBaySAYAbefXA8kgBoxfYWOYqWKcnmCMXq58czU'
 var imgProgress = document.querySelector('#loadingCircle');
 
 // Parralax Scrolling Animation
-//var rellax = new Rellax('.rellax');
+var rellax = new Rellax('.rellax');
 
 var today = moment().format('YYYY-MM-DD')
 
@@ -95,7 +95,7 @@ var getMars = function() {
             
             sols = data.sol_keys
             var season = data[sols[sols.length - 1]].Season 
-            
+            console.log(`It is currently ${season} at the insight weather station on Mars!`)
 
             //loop that gets data for sols[i] then sends it to a function to build it on the page.
             for (i = 0; i < sols.length; i++) {
@@ -132,16 +132,15 @@ var getMars = function() {
 
                 
 
-                //sends data to be displayed
-                console.log(`It is currently ${season} at the insight weather station on Mars!`) 
-                buildMars(sols[i], marsData.avgTempOnSol, marsData.minTempOnSol, marsData.maxTempOnSol, dateToMoment)
+                //sends data to be displayed 
+                buildMars(sols[i], marsData.avgTempOnSol, marsData.minTempOnSol, marsData.maxTempOnSol, dateToMoment, season)
  
             }
 
         });
 
         } else {
-            
+            console.log('Could not get response')
         }
     })
     .catch(function(error) {
@@ -151,8 +150,8 @@ var getMars = function() {
 }
 
 //displays data
-var buildMars = function(sol, avgAT, minAT, maxAT, date) {
-
+var buildMars = function(sol, avgAT, minAT, maxAT, date, season) {
+    
     console.log(`Temps on sol ${sol} (${date}) Avg = ${avgAT}°C | Min = ${minAT}°C | Max = ${maxAT}°C`)
     
 }
