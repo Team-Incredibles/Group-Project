@@ -98,7 +98,7 @@ svg {
 @keyframes flyingRock-2 {
     100%, 0% { transform: translateX(10%) translateY(-30vh) rotateZ(20deg); }
     35% { transform: translateX(110vw) translateY(87%) rotateZ(180deg); }
-    55% { transform: translateX(-80%) translateY(70vh) rotateZ(-115deg); }
+    55% { transform: translateX(-80%) translateY(60vh) rotateZ(-115deg); }
     85% { transform: translateX(200vw) translateY(30vh) rotateZ(300deg); }
 }
 
@@ -124,8 +124,8 @@ svg {
 .rock-2 {
     bottom: 40em;
     left: -8em;
-    animation: flyingRock-2 80s 4 linear;
-    animation-delay: 30s;
+    animation: flyingRock-2 70s 4 linear;
+    animation-delay: 35;
 }
 /* Parallax Rock Section End */ 
 
