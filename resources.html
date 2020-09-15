@@ -8,53 +8,111 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css"
         integrity="sha512-9RIcp1f4CE6dEuYX9085tXaEbYd1ap04d2Av1ub/dwuT33WbfbHStDdQ+shKrp5wzZzleh5DOg+7ABSnaQP/nQ=="
         crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/styles-2.css">
-        <!-- Title -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="stylesheet" href="./assets/css/secondaryStyles.css"> <!-- Title -->
     <title>Space Dash - Resources and Citing</title>
 </head>
+
 <body>
-
-    <!-- Page Heading -->
-    <header>
-        <div class="header-container">
-        <h1 class="text-uppercase big-text">Resources Used</h1>
+    <!-- Hero Area -->
+    <div class="hero bg-gray">
+        <div class="hero-body" id="#">
+            <div>
+                <img src="./assets/images/Logo-1.png" alt="Website Space-Ship Logo"
+                    class="logo-image animate__animated animate__fadeInDownBig" />
+            </div>
+            <!-- Space Dash has been manipulated as an SVG to allow Animation-->
+            <a href="./index.html">
+                <svg viewBox="0 0 300 20">
+                    <symbol id="s-text">
+                        <text text-anchor="middle" x="56.6%" y="80%">Space Dash</text>
+                    </symbol>
+                    <g class="g-ants">
+                        <use xlink:href="#s-text" class="text-copy"></use>
+                        <use xlink:href="#s-text" class="text-copy"></use>
+                        <use xlink:href="#s-text" class="text-copy"></use>
+                        <use xlink:href="#s-text" class="text-copy"></use>
+                        <use xlink:href="#s-text" class="text-copy"></use>
+                    </g>
+                </svg>
+            </a>
+            <p class="animate-pop-in">Galactic Information with Ease</p>
+            <div class="flexbox-break-banner-logo">
+            </div>
         </div>
-    </header>
+    </div>
 
-    <!-- Main Content / Resource List-->
-    <article>
-        <!-- NASA API Resource -->
-        <div class="api-title">
-            <h3>
-                <a class="text-uppercase big-text nasa-api-text" href="https://api.nasa.gov/" target="_blank">NASA APIs</a>
-            </h3>
+    <!-- Resources  -->
+    <div class="flex-row">
+        <h2 class="rsrc-title">Resources Used in the Space Dash</h2>
+    </div>
+
+    <!-- APOD API -->
+    <article class="nasaApi">
+        <div class="nasa-img api-1">
+            <div>
+                <h3>
+                    APOD
+                </h3>
+                <h4> Astronomy Picture of the
+                    Day</h4>
+            </div>
         </div>
-        
-        <p>
-            <!-- Unordered List for APIs -->
-        <ul>
-            <!-- APOD API -->
-            <li>
-                <a class="li-text" href="https://apod.nasa.gov/apod/astropix.html" target="_blank">APOD: Astronomy Picture of the
-                    Day</a>
-                <p>Our team used this API to pull the images you see in "Image of the Day!"</p>
-            </li>
-            <!-- InSight API -->
-            <li>
-                <a class="li-text" href="https://mars.nasa.gov/insight/weather/" target="_blank">InSight: Mars Weather Service API</a>
-                <p></p>
-            </li>
-            <!-- Asteroid NeoWS API -->
-            <li>
-                <a class="li-text" href="https://cneos.jpl.nasa.gov/" target="_blank">Asteroid NeoWs: Near Earth Object Web Service</a>
-                <p>
-                    You rock! Our team wanted to show your closest competition.
-                </p>
-            </li>
-        </ul>
-        </p>
+        <div class="rsrc-bio">
+            <p>
+                Our team used this API to pull the images you see in "Image of the Day!"<br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt suscipit veniam voluptas. Obcaecati a molestias animi quo labore. Ipsam quia, odit fugit amet quasi dignissimos id atque sint itaque praesentium.
+            </p>
+        </div>
     </article>
 
+    <!-- InSight API -->
+    <article class="nasaApi">
+        <div class="nasa-img api-2">
+            <div>
+                <h3>
+                    InSight
+                </h3>
+                <h4>Mars Weather Service API</h4>
+            </div>
+        </div>
+        <div class="rsrc-bio">
+            <p>
+                Gravity got you down? Mars can relate to feeling low.<br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum fugiat atque eius necessitatibus tempora accusantium nobis autem architecto saepe distinctio! Laudantium nulla quae repudiandae fugiat illo exercitationem. Nihil, tempora officia.
+            </p>
+        </div>
+    </article>
+
+    <!-- Asteroid NeoWS API -->
+    <article class="nasaApi">
+        <div class="nasa-img api-3">
+            <div>
+                <h3>Asteroid NeoWs</h3>
+                <h4>Near Earth Object Web Service</h4>
+            </div>
+        </div>
+        <div class="rsrc-bio">
+            <p>
+                You rock! Our team wanted to show your closest competition.<br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt exercitationem eum molestiae magnam accusamus voluptate voluptatem, fugiat autem sed neque maxime laboriosam doloribus libero qui, necessitatibus sunt deleniti obcaecati aut!
+            </p>
+        </div>
+    </article>
+
+        <!-- Footer Area -->
+        <footer class="footer">
+            <div class="footer-line">
+                <a href="#" class="logo-area"><img src="./assets/images/Logo-1.png" alt="Website Space-Ship Logo" class="logo-2 animate__animated animate__rollIn"></a>
+            </div>
+            <!-- Links to Resources-->
+            <div class="resources">
+                <a href="https://github.com/Team-Incredibles/Group-Project" target="_blank">Made With ❤️ by Team Incredibles</a>
+            </div>
+        </footer>
 </body>
+
 </html>
