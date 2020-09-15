@@ -57,35 +57,77 @@ svg {
     animation: stroke-offset 5.5s infinite linear;
 }
 
-.text-copy:nth-child(1){
+.text-copy:nth-child(1) {
 	stroke: #fafafa;
 	animation-delay: -1s;
 }
 
-.text-copy:nth-child(2){
+.text-copy:nth-child(2) {
 	stroke: #0000ff;
 	animation-delay: -2s;
 }
 
-.text-copy:nth-child(3){
+.text-copy:nth-child(3) {
 	stroke: #ffa500;
 	animation-delay: -3s;
 }
 
-.text-copy:nth-child(4){
+.text-copy:nth-child(4) {
 	stroke: #BD0034;
 	animation-delay: -4s;
 }
 
-.text-copy:nth-child(5){
+.text-copy:nth-child(5) {
 	stroke: #FDB731;
 	animation-delay: -5s;
 }
 
-@keyframes stroke-offset{
+@keyframes stroke-offset {
 	100% {stroke-dashoffset: -35%;}
 }
 /* Animation Area End */
+
+/* Parallax Rock Section */ 
+@keyframes flyingRock-1 {
+    100%, 0% { transform: translateX(-50%) translateY(40vh) rotateZ(20deg); }
+    35% { transform: translateX(110vw) translateY(-120%) rotateZ(180deg); }
+    55% { transform: translateX(-200%) translateY(80vh) rotateZ(-180deg); }
+    78% { transform: translateX(200vw) translateY(-80%) rotateZ(-50deg); }
+}
+
+@keyframes flyingRock-2 {
+    100%, 0% { transform: translateX(10%) translateY(-30vh) rotateZ(20deg); }
+    35% { transform: translateX(110vw) translateY(87%) rotateZ(180deg); }
+    55% { transform: translateX(-80%) translateY(70vh) rotateZ(-115deg); }
+    85% { transform: translateX(200vw) translateY(30vh) rotateZ(300deg); }
+}
+
+.floating-rocks {
+    display: block;
+    position: fixed;
+    opacity: 0.98;
+}
+
+.rock-style-1 {
+    width: 130px;
+}
+
+.rock-style-2 {
+    width: 110px;
+}
+
+.rock-1 {
+    left: -7em;
+    animation: flyingRock-1 70s 3 linear;
+}
+
+.rock-2 {
+    bottom: 40em;
+    left: -8em;
+    animation: flyingRock-2 80s 4 linear;
+    animation-delay: 30s;
+}
+/* Parallax Rock Section End */ 
 
 /* Body/JumboTron Styling */
 body {
@@ -116,6 +158,8 @@ iframe {
 }
 
 .hero {
+    transform: translateZ(0);
+    z-index: 9999;
     background: #000 url(../images/earth-image.jpg) center no-repeat;
     mask-image: none;
     -webkit-mask-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1));
@@ -170,7 +214,9 @@ h2,
 h3,
 p
  {
-    color: white;
+    transform: translateZ(0);
+    color: black;
+    font-weight: 500;
 }
 
 .fact-container {
@@ -187,10 +233,12 @@ p
 }
 
 .card-wrapping-0 {
+    transform: translateZ(0);
+    z-index: 9998;
     border-radius: 5px;
     border-width: 1px;
-    background-color: rgba(78, 72, 72, 0.1);
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px 0px;
+    background-color: rgba(255, 255, 255, 0.856);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 8px 0px;
     color: hsl(200, 5%, 13%);
     margin: 3% 3%;
     padding: 4%;
@@ -202,11 +250,13 @@ p
 }
 
 .card-wrapping {
+    transform: translateZ(0);
+    z-index: 9997;
     opacity: 0.8;
     border-radius: 5px;
     border-width: 1px;
-    background-color: rgba(78, 72, 72, 0.1);
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px 0px;
+    background-color: rgba(255, 255, 255, 0.856);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 8px 0px;
     color: hsl(200, 5%, 13%);
     margin: 3% 3%;
     padding: 4%;
@@ -218,11 +268,13 @@ p
 }
 
 .card-wrapping-2 {
+    transform: translateZ(0);
+    z-index: 9996;
     opacity: 0.8;
     border-radius: 5px;
     border-width: 1px;
-    background-color: rgba(78, 72, 72, 0.1);
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px 0px;
+    background-color: rgba(255, 255, 255, 0.856);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 8px 0px;
     color: hsl(200, 5%, 13%);
     margin: 3% 3%;
     padding: 4%;
@@ -234,11 +286,13 @@ p
 }
 
 .card-wrapping-3 {
+    transform: translateZ(0);
+    z-index: 9995;
     opacity: 0.8;
     border-radius: 5px;
     border-width: 1px;
-    background-color: rgba(78, 72, 72, 0.1);
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px 0px;
+    background-color: rgba(255, 255, 255, 0.856);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 8px 0px;
     color: hsl(200, 5%, 13%);
     margin: 3% 3%;
     padding: 4%;
@@ -275,6 +329,7 @@ p
 
 /* Footer Styling */
 footer {
+    z-index: 9994;
     position: relative;
     width: 100%;
     margin-top: 4%;
@@ -301,6 +356,7 @@ footer {
 }
 
 .footer a {
+    transform: translateZ(0);
     color: white;
     position: relative;
     text-decoration: none;
@@ -369,7 +425,7 @@ footer {
 /* Media Query Adjustments 992px*/
 @media screen and (max-width: 1396px) {
     * {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .hero {
@@ -396,6 +452,7 @@ footer {
     }
 
     .fact-container {
+        margin-top: 9%;
         margin-left: 10%;
         width: 80%;
     }
@@ -417,8 +474,8 @@ footer {
 
     .card-wrapping-0 {
         text-align: center;
-        margin-left: 5%;
-        width: 90%;
+        margin-left: 10%;
+        width: 80%;
     }
 
     .card-wrapping {
