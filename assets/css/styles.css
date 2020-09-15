@@ -25,6 +25,14 @@
     100% { transform: translate(5px, -2px) rotate(-3deg); }
 }
 
+@keyframes easyShake {
+    0% { transform: rotate(0deg); }
+   30% { transform: rotate(0deg); }
+   55% { transform: rotate(6deg); }
+   95% { transform: rotate(-6deg); }
+  100% { transform: rotate(0deg); }
+}
+
 @keyframes downward {
     50% { transform: translateY(15px) rotate(3deg);}
     100% { transform: translateY(30) rotate(0.2deg);}
@@ -89,10 +97,10 @@ svg {
 
 /* Parallax Rock Section */ 
 @keyframes flyingRock-1 {
-    100%, 0% { transform: translateX(-50%) translateY(40vh) rotateZ(20deg); }
+    100%, 0% { transform: translateX(-50%) translateY(30vh) rotateZ(20deg); }
     35% { transform: translateX(110vw) translateY(-120%) rotateZ(180deg); }
-    55% { transform: translateX(-200%) translateY(80vh) rotateZ(-180deg); }
-    78% { transform: translateX(200vw) translateY(-80%) rotateZ(-50deg); }
+    55% { transform: translateX(-200%) translateY(75vh) rotateZ(-180deg); }
+    78% { transform: translateX(250vw) translateY(-50%) rotateZ(-50deg); }
 }
 
 @keyframes flyingRock-2 {
@@ -118,14 +126,14 @@ svg {
 
 .rock-1 {
     left: -7em;
-    animation: flyingRock-1 70s 3 linear;
+    animation: flyingRock-1 60s 3 linear;
 }
 
 .rock-2 {
     bottom: 40em;
     left: -8em;
     animation: flyingRock-2 70s 4 linear;
-    animation-delay: 35;
+    animation-delay: 35s;
 }
 /* Parallax Rock Section End */ 
 
@@ -309,6 +317,10 @@ p
     margin-top: 2%;
 }
 
+.btn:hover, span:hover {
+    animation: easyShake .18s 1 linear;
+}
+
 .popover {
     display: inline;
 }
@@ -366,7 +378,7 @@ footer {
 
 .footer a::after {
     border-radius: 1em;
-    border-top: 1px solid hsl(0, 0%, 100%);;
+    border-top: 1px solid hsl(0, 0%, 100%);
     content: "";
     position: absolute;
     right: 100%;
