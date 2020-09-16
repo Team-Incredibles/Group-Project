@@ -1,13 +1,30 @@
-/* Resources Styles */
+/* Hero Styling */
+.hero {
+    transform: translateZ(0);
+    z-index: 9999;
+    background: #000 url(./images/earth-image.jpg) center no-repeat;
+    mask-image: none;
+    -webkit-mask-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1));
+    background-size: 100%;
+    background-position-x: 200px;
+    position: relative;
+    display: flex;
+    text-align: center;
+    padding: 40px 80px;
+    overflow: visible;
+}
 
+/* Resources Styles */
 .flex-row {
     display: flex;
 }
 .rsrc-title {
     font-size: 36px;
-    border-bottom: 3px solid;
+    border-bottom: 3px double;
     padding-top: 18px;
     padding-bottom: 18px;
+    color: white;
+    font-style: oblique;
     text-align: center;
     margin: 0 auto 35px auto;
     width: 60%;
