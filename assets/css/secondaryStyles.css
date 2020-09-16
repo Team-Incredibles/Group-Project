@@ -77,11 +77,11 @@
     font-size: 17px;
 }
 .api-1 {
-    background-image: url();
+    background-image: url("https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/potw2034a.jpg");
 }
 .api-2 {
     background-image: url("https://www.nasa.gov/sites/default/files/thumbnails/image/pia22957-16_0.jpg");
 }
 .api-3 {
-    background-image: url();
+    background-image: url("https://s3.amazonaws.com/open-nasa-files/images/asteroids.width-800.png");
 }
