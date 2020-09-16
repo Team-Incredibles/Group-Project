@@ -10,16 +10,16 @@
     <link rel="stylesheet" href="./assets/css/styles.css" />
     <title>The Space Dash 🌌</title>
 </head>
-<body>
+<body class="rellax">
 
     <!-- Hero Area -->
-    <div class="hero bg-gray" id="#">
+    <div class="hero" id="#">
         <div class="hero-body">
             <div>
                 <img src="./assets/images/Logo-1.png" alt="Website Space-Ship Logo" class="logo-image animate__animated animate__fadeInDownBig"/>
             </div>
             <!-- Space Dash has been manipulated as an SVG to allow Animation-->
-            <svg viewBox="0 0 250 20">
+            <svg viewBox="0 0 250 20" class="rellax">
                 <symbol id="s-text">
                     <text text-anchor="middle" x="56.6%" y="80%" font-size="20px" class="space-text animate-pop-in">Space Dash</text>
                 </symbol>
@@ -32,7 +32,7 @@
                     <use href="#s-text" class="text-copy"></use>
                 </g>
             </svg>
-            <p class= "animate-pop-in">Galactic Information with Ease</p>
+            <p class="animate-pop-in title-desc">Galactic Information with Ease</p>
         </div>
     </div>
 
@@ -47,6 +47,10 @@
                 </div>
             </a>
         </div>
+
+        <div class="new-rellax floating-rocks rock-2">
+            <img src="./assets/images/space-rock-2.jpg" alt="Meteoroid!" class="rock-style-2">
+        </div>
         
         <!-- Info Area -->
         <!-- Image description Area-->
@@ -56,13 +60,19 @@
                 <h3 id="iotdTitle"></h3>
                 <p id="image-description"></p>
             </div>
-            <!-- Divider -->
-            <div class="divider-vert" data-content="AND"></div>
-            <!-- Fact Area-->
-            <div>
-                <h2>Space Fact!</h2>
-                <p id="space-facts">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur deserunt ratione debitis ea repellendus alias error? Totam officia error pariatur cupiditate odio nostrum tempora, animi dolore tempore? Iusto, dicta consectetur.</p>
-            </div>
+        </div>
+    </div>
+
+    <div class="new-rellax floating-rocks rock-1">
+        <img src="./assets/images/space-rock-1.jpg" alt="Meteoroid!" class="rock-style-1">
+    </div>
+
+    <!-- Fact Container-->
+    <div class="fact-container card-wrapping-3 col-md-8">
+        <!-- Fact Area-->
+        <div>
+            <h2>Space Fact!</h2>
+            <p id="space-facts">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur deserunt ratione debitis ea repellendus alias error? Totam officia error pariatur cupiditate odio nostrum tempora, animi dolore tempore? Iusto, dicta consectetur.</p>
         </div>
     </div>
 
@@ -73,26 +83,30 @@
             <form id="aster-form-input" class="aster-form">
                 <!-- Asteroid Form Input -->
                 <input name="date" id="date" type="date" class="form-input">
+                <!-- Asteroid Pop-Over -->
                 <div class="popover popover-top">
                     <button type="submit" id="add-asteroid" class="btn btn-asteroid"><span class="oi oi-globe"></span></button>
                     <div class="popover-container">
+                        <!-- Asteroid Pop-Over Title -->
                         <div class="card">
                             <div class="card-header">
                                 <h4>What Does this Do?</h4>
                             </div>
                             <div class="card-body">
+                                <!-- Asteroid Pop-Over Description -->
                                 <p>This API grabs information from Nasa's
                                 NeoWs (Near Earth Object Web Service) with updated information on close-by Asteroids
                                 on a specific date and data for the following 7 days.
                                 </p>
                             </div>
                             <div class="card-footer">
+                                <!-- Asteroid Pop-Over Link -->
                             <a href="https://cneos.jpl.nasa.gov/" target="_blank">More Info Here!</a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>                
+            </div>           
 
         <!-- Mars Weather Area -->
         <div class="weather-conatiner card-wrapping-2 col-md-6">
@@ -100,20 +114,24 @@
                 <h3>Weather on Mars</h3>
                 <!-- Mars Weather & Forecast Form Input-->
                 <!-- Sol and Date Needed for Mars Weather Now "Or" Auto complete areas with recent one with click of a button -->
+                <!-- Mars Weather Pop-Over -->
                 <div class="popover popover-top">
                     <button type="submit" id="add-weather" value="search" class="btn btn-weather"><span class="oi oi-cloudy"></span></button>
                     <div class="popover-container">
+                        <!-- Asteroid Pop-Over Title -->
                         <div class="card">
                             <div class="card-header">
                                 <h4>What Does this Do?</h4>
                             </div>
                             <div class="card-body">
+                                <!-- Asteroid Pop-Over Description -->
                                 <p>This API grabs information from Nasa's
                                 InSight Mars lander taking continuous weather measurements
                                  on the surface of Mars at Elysium Planitia.
                                 </p>
                             </div>
                             <div class="card-footer">
+                                <!-- Asteroid Pop-Over Link -->
                             <a href="https://mars.nasa.gov/insight/weather/" target="_blank">More Info Here!</a>
                             </div>
                         </div>
