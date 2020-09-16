@@ -163,6 +163,6 @@ var round = function(num) {
     return num;
 }
 
-//rover image section
+
 
 
