@@ -6,6 +6,7 @@ var imgProgress = document.querySelector('#loadingCircle');
 // Parralax Scrolling Animation
 var rellax = new Rellax('.rellax');
 
+
 var secondRellax = new Rellax('.new-rellax', {
     center: true
 });
@@ -167,4 +168,3 @@ var round = function(num) {
     return num;
 }
 
-//rover image section
