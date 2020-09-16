@@ -25,6 +25,14 @@
     100% { transform: translate(5px, -2px) rotate(-3deg); }
 }
 
+@keyframes easyShake {
+    0% { transform: rotate(0deg); }
+   30% { transform: rotate(0deg); }
+   55% { transform: rotate(6deg); }
+   95% { transform: rotate(-6deg); }
+  100% { transform: rotate(0deg); }
+}
+
 @keyframes downward {
     50% { transform: translateY(15px) rotate(3deg);}
     100% { transform: translateY(30) rotate(0.2deg);}
@@ -50,51 +58,106 @@ svg {
 
 .text-copy {
     fill: none;
-    stroke: black;
+    stroke: white;
     stroke-dasharray: 6% 29%;
     stroke-width: 1px;
     stroke-dashoffset: 0%;
     animation: stroke-offset 5.5s infinite linear;
 }
 
-.text-copy:nth-child(1){
-	stroke: #000000;
+.text-copy:nth-child(1) {
+	stroke: #fafafa;
 	animation-delay: -1s;
 }
 
-.text-copy:nth-child(2){
+.text-copy:nth-child(2) {
 	stroke: #0000ff;
 	animation-delay: -2s;
 }
 
-.text-copy:nth-child(3){
+.text-copy:nth-child(3) {
 	stroke: #ffa500;
 	animation-delay: -3s;
 }
 
-.text-copy:nth-child(4){
+.text-copy:nth-child(4) {
 	stroke: #BD0034;
 	animation-delay: -4s;
 }
 
-.text-copy:nth-child(5){
+.text-copy:nth-child(5) {
 	stroke: #FDB731;
 	animation-delay: -5s;
 }
 
-@keyframes stroke-offset{
+@keyframes stroke-offset {
 	100% {stroke-dashoffset: -35%;}
 }
 /* Animation Area End */
 
+/* Parallax Rock Section */ 
+@keyframes flyingRock-1 {
+    100%, 0% { transform: translateX(-50%) translateY(30vh) rotateZ(20deg); }
+    35% { transform: translateX(110vw) translateY(-120%) rotateZ(180deg); }
+    55% { transform: translateX(-200%) translateY(75vh) rotateZ(-180deg); }
+    78% { transform: translateX(250vw) translateY(-50%) rotateZ(-50deg); }
+}
+
+@keyframes flyingRock-2 {
+    100%, 0% { transform: translateX(10%) translateY(-30vh) rotateZ(20deg); }
+    35% { transform: translateX(110vw) translateY(87%) rotateZ(180deg); }
+    55% { transform: translateX(-80%) translateY(60vh) rotateZ(-115deg); }
+    85% { transform: translateX(200vw) translateY(30vh) rotateZ(300deg); }
+}
+
+.floating-rocks {
+    display: block;
+    position: fixed;
+    opacity: 0.98;
+}
+
+.rock-style-1 {
+    width: 130px;
+}
+
+.rock-style-2 {
+    width: 110px;
+}
+
+.rock-1 {
+    left: -7em;
+    animation: flyingRock-1 60s 3 linear;
+}
+
+.rock-2 {
+    bottom: 40em;
+    left: -8em;
+    animation: flyingRock-2 70s 4 linear;
+    animation-delay: 35s;
+}
+/* Parallax Rock Section End */ 
+
 /* Body/JumboTron Styling */
 body {
     min-height: 100%;
-    font-size: 20px;
+    font-size: 26px;
+    background: #000 url(../images/stars-image.jpg) center;
 }
 
 .iotd {
     max-width: 100%; 
+}
+
+#img-container{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+iframe {
+    border: none;
+    flex-grow: 1;
+    min-height: 50vh;
 }
 
 #img-container{
@@ -115,22 +178,32 @@ iframe {
 }
 
 .hero {
+    transform: translateZ(0);
+    z-index: 9999;
+    background: #000 url(../images/earth-image.jpg) center no-repeat;
+    mask-image: none;
+    -webkit-mask-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1));
+    background-size: 100%;
+    background-position-x: 200px;
+    position: relative;
     display: flex;
     text-align: center;
     padding: 40px 80px;
+    overflow: visible;
 }
 
 .hero-body {
-    border-bottom: 4px solid black;
+    border-bottom: 4px solid white;
 }
 
 .hero-body h1, p {
-    margin: 20px 0 15px;    
+    margin: 20px 0 15px;
 }
 
 .hero-body p {
     font-size: 21px;
-    font-weight: 500;   
+    font-weight: 500;
+    color: white;
 }
 
 .logo-image {
@@ -138,6 +211,8 @@ iframe {
     float: left;
     max-width: 9%;
     animation-delay: 0.3s;
+    background-color: white;
+    border-radius: 75%;
 }
 /* Body/JumboTron Styling End */
 
@@ -155,6 +230,19 @@ iframe {
     text-align: center;
 }
 
+h2,
+h3,
+p
+ {
+    transform: translateZ(0);
+    color: black;
+    font-weight: 500;
+}
+
+.fact-container {
+    text-align: center;
+}
+
 .info-area h2{
     text-align: center;
 }
@@ -165,12 +253,16 @@ iframe {
 }
 
 .card-wrapping-0 {
+    transform: translateZ(0);
+    z-index: 9998;
     border-radius: 5px;
     border-width: 1px;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px 0px;
+    background-color: rgba(255, 255, 255, 0.88);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 8px 0px;
     color: hsl(200, 5%, 13%);
     margin: 3% 3%;
     padding: 4%;
+    max-width: 1150px;
     -webkit-transition: all 0.5s ease-out;
     -moz-transition: all 0.5s ease-out;
     -o-transition: all 0.5s ease-out;
@@ -179,10 +271,13 @@ iframe {
 }
 
 .card-wrapping {
+    transform: translateZ(0);
+    z-index: 9997;
     opacity: 0.8;
     border-radius: 5px;
     border-width: 1px;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px 0px;
+    background-color: rgba(255, 255, 255, 0.88);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 8px 0px;
     color: hsl(200, 5%, 13%);
     margin: 3% 3%;
     padding: 4%;
@@ -194,10 +289,31 @@ iframe {
 }
 
 .card-wrapping-2 {
+    transform: translateZ(0);
+    z-index: 9996;
     opacity: 0.8;
     border-radius: 5px;
     border-width: 1px;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px 0px;
+    background-color: rgba(255, 255, 255, 0.88);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 8px 0px;
+    color: hsl(200, 5%, 13%);
+    margin: 3% 3%;
+    padding: 4%;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+
+.card-wrapping-3 {
+    transform: translateZ(0);
+    z-index: 9995;
+    opacity: 0.8;
+    border-radius: 5px;
+    border-width: 1px;
+    background-color: rgba(255, 255, 255, 0.88);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 8px 0px;
     color: hsl(200, 5%, 13%);
     margin: 3% 3%;
     padding: 4%;
@@ -213,23 +329,32 @@ iframe {
     margin-top: 2%;
 }
 
+.btn:hover, span:hover {
+    animation: easyShake .18s 1 linear;
+}
+
 .popover {
     display: inline;
 }
 
+.card-body p {
+    color: black;
+}
+
 .card-wrapping-2:hover {
-    opacity: 0.97;
+    opacity: 0.99;
     box-shadow: rgba(202, 152, 76, 0.6) 0px 2px 12px 0px;
 }
 
-.card-wrapping:hover, .card-wrapping-0:hover {
-    opacity: 0.97;
+.card-wrapping:hover, .card-wrapping-0:hover, .card-wrapping-3:hover {
+    opacity: 0.99;
     box-shadow: rgba(96, 79, 173, 0.6) 0px 2px 12px 0px;
 }
 /* Main Content Container Area Styling End */
 
 /* Footer Styling */
 footer {
+    z-index: 9994;
     position: relative;
     width: 100%;
     margin-top: 4%;
@@ -238,6 +363,8 @@ footer {
 
 .logo-2 {
     max-width: 5em;
+    background-color: white;
+    border-radius: 75%;
 }
 
 .logo-area {
@@ -254,7 +381,8 @@ footer {
 }
 
 .footer a {
-    color: black;
+    transform: translateZ(0);
+    color: white;
     position: relative;
     text-decoration: none;
     transition: color .4s ease-out;
@@ -262,7 +390,7 @@ footer {
 
 .footer a::after {
     border-radius: 1em;
-    border-top: 1px solid hsl(200, 5%, 13%);;
+    border-top: 1px solid hsl(0, 0%, 100%);
     content: "";
     position: absolute;
     right: 100%;
@@ -284,7 +412,7 @@ footer {
 .footer-line::before, .footer-line::after {
     content: '';
     flex: 1;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid white;
 }
 
 .footer-line::before {
@@ -302,29 +430,38 @@ footer {
 }
 /* Footer Styling End*/
 
-/* Media Query Adjustments 1200px*/
-@media screen and (max-width: 1200px) {
-    footer {
-        position: relative;
+/* Media Query Adjustments 1900px*/
+@media screen and (max-width: 1900px) {
+    .img-otd {
+        max-height: 42.9vh;
+    }
+
+    .iotd {
+        max-height: 38.9vh;
         width: 100%;
-        bottom: 5px;
+    }
+
+    .info-area {
+        overflow: auto;
+        max-height: 42.9vh;
     }
 }
 
 /* Media Query Adjustments 992px*/
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1396px) {
     * {
-        font-size: 16px;
+        font-size: 20px;
     }
 
     .hero {
         display: flex;
         text-align: center;
         padding: 5%;
+        background-position-x: 100px;
     }
 
     .hero-body p {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     svg {
@@ -339,14 +476,31 @@ footer {
         transform: translateY(5%);
     }
 
+    .fact-container {
+        margin-top: 9%;
+        margin-left: 10%;
+        width: 80%;
+    }
+
+    .img-otd {
+        max-height: none;
+        min-height: none;
+    }
+
+    .iotd {
+        max-height: none;
+        width: 100%;
+        min-height: none;
+    }
+
     .logo-image {
         display: none;
     }
 
     .card-wrapping-0 {
         text-align: center;
-        margin-left: 5%;
-        width: 90%;
+        margin-left: 10%;
+        width: 80%;
     }
 
     .card-wrapping {
@@ -390,7 +544,7 @@ footer {
         margin: 0;
     }
     
-    .resources {
-        margin: 5px;
+    .resources a {
+        margin: 0 5px;
     }
 }
