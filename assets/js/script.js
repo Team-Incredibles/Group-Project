@@ -6,6 +6,11 @@ var imgProgress = document.querySelector('#loadingCircle');
 // Parralax Scrolling Animation
 var rellax = new Rellax('.rellax');
 
+
+var secondRellax = new Rellax('.new-rellax', {
+    center: true
+});
+
 var today = moment().format('YYYY-MM-DD')
 
 
@@ -162,7 +167,4 @@ var round = function(num) {
     var num = Math.round(num)
     return num;
 }
-
-
-
 
