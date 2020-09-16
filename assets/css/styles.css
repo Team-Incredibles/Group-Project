@@ -52,7 +52,7 @@
 
 svg {
     display: flex;
-    width: 80%;
+    width: 72%;
     height: 30%;
 }
 
@@ -184,14 +184,11 @@ iframe {
     border-bottom: 4px solid white;
 }
 
-.hero-body h1, p {
-    margin: 20px 0 15px;
-}
-
 .hero-body p {
-    font-size: 21px;
+    font-size: 24px;
     font-weight: 500;
     color: white;
+    margin-right: 10%;
 }
 
 .logo-image {
@@ -212,9 +209,7 @@ iframe {
 }
 
 .atmos-info {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    grid-gap: 10px;
+    display: inline;
     text-align: center;
 }
 
@@ -224,7 +219,6 @@ p
  {
     transform: translateZ(0);
     color: black;
-    font-weight: 500;
 }
 
 .fact-container {
@@ -285,8 +279,8 @@ p
     background-color: rgba(255, 255, 255, 0.88);
     box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 8px 0px;
     color: hsl(200, 5%, 13%);
-    margin: 3% 3%;
-    padding: 4%;
+    margin: 4.5% 3%;
+    padding: 3.2%;
     -webkit-transition: all 0.5s ease-out;
     -moz-transition: all 0.5s ease-out;
     -o-transition: all 0.5s ease-out;
@@ -303,8 +297,9 @@ p
     background-color: rgba(255, 255, 255, 0.88);
     box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 8px 0px;
     color: hsl(200, 5%, 13%);
-    margin: 3% 3%;
-    padding: 4%;
+    margin: 4% 10%;
+    padding: 3%;
+    width: 80%;
     -webkit-transition: all 0.5s ease-out;
     -moz-transition: all 0.5s ease-out;
     -o-transition: all 0.5s ease-out;
@@ -421,17 +416,19 @@ footer {
 /* Media Query Adjustments 1900px*/
 @media screen and (max-width: 1900px) {
     .img-otd {
-        max-height: 42.9vh;
+        max-height: 60vh;
+        min-height: 56.9vh;
     }
 
     .iotd {
-        max-height: 38.9vh;
+        max-height: 50.9vh;
         width: 100%;
     }
 
     .info-area {
         overflow: auto;
-        max-height: 42.9vh;
+        min-height: 48.9vh;
+        max-height: 56.9vh;
     }
 }
 
@@ -450,6 +447,7 @@ footer {
 
     .hero-body p {
         font-size: 18px;
+        margin-right: 1%;
     }
 
     svg {
@@ -472,7 +470,7 @@ footer {
 
     .img-otd {
         max-height: none;
-        min-height: none;
+        min-height: 100%;
     }
 
     .iotd {
@@ -510,7 +508,7 @@ footer {
     .atmos-info {
         display: inline-block;
         text-align: center;
-        margin-top: 9%;
+        margin-top: 5%;
         margin-left: 0.2%;
         width: 100%;
     }
