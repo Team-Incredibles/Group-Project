@@ -81,17 +81,90 @@ $('#add-asteroid').on('click', function () {
 $('#add-weather').on('click', function() {
     event.preventDefault();
     console.log('Weather button clicked');
+    getMars();
 });
 
 
 // Mars weather section
 var getMars = function() {
     
-    // Get horizontal wind speed
     // Get high, low, and avg temp
     // Get season
     // Get sol and earth date
+    fetch(`https://api.nasa.gov/insight_weather/?api_key=${nasaKey}&feedtype=json&ver=1.0`)
+    .then(function(response) {
+    
+        if (response.ok) {
+            response.json().then(function (data) {
+            
+            sols = data.sol_keys
+            var season = data[sols[sols.length - 1]].Season 
+            console.log(`It is currently ${season} at the insight weather station on Mars!`)
 
+            //loop that gets data for sols[i] then sends it to a function to build it on the page.
+            for (i = 0; i < sols.length; i++) {
+                
+                //weather data that needs to be rounded
+                var marsData = {
+
+                    //temperature data
+                    avgTempOnSol: data[sols[i]].AT.av,
+                    minTempOnSol: data[sols[i]].AT.mn,
+                    maxTempOnSol: data[sols[i]].AT.mx,
+
+                    
+                }
+
+                //date
+                var solToDate = data[sols[i]].First_UTC
+
+                const vals = Object.values(marsData)
+                const keys = Object.keys(marsData)
+
+                //sends each number to be rounded
+                for (x = 0; x < vals.length; x++) {
+
+                    newVal = round(vals[x])
+                    
+                    marsData[keys[x]] = newVal
+                
+                }
+
+                //formats date
+                var date = solToDate.replace(/-/g, "").split('T', 1)
+                var dateToMoment = moment(date, 'YYYYMMDD').format('MMM Do')
+
+                
+
+                //sends data to be displayed 
+                buildMars(sols[i], marsData.avgTempOnSol, marsData.minTempOnSol, marsData.maxTempOnSol, dateToMoment, season)
+ 
+            }
+
+        });
+
+        } else {
+            console.log('Could not get response')
+        }
+    })
+    .catch(function(error) {
+        
+
+    });
+}
+
+//displays data
+var buildMars = function(sol, avgAT, minAT, maxAT, date, season) {
+    
+    console.log(`Temps on sol ${sol} (${date}) Avg = ${avgAT}°C | Min = ${minAT}°C | Max = ${maxAT}°C`)
+    
+}
+
+//rounds number to nearest whole
+var round = function(num) {
+    parseInt(num)
+    var num = Math.round(num)
+    return num;
 }
 
 //rover image section
