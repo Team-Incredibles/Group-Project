@@ -34,20 +34,33 @@
 }
 
 @keyframes downward {
-    50% { transform: translateY(15px) rotate(3deg);}
-    100% { transform: translateY(30) rotate(0.2deg);}
+    50% { transform: translateY(15px) rotate(3deg); }
+    100% { transform: translateY(30) rotate(0.2deg); }
 }
 
 @keyframes catch {
-    50% { transform: translateX(25px) rotate(-12deg);}
-    65% { transform: translateY(-15px) rotate(-6deg);}
-    100% { transform: rotate(0.2deg);}
+    50% { transform: translateX(25px) rotate(-12deg); }
+    65% { transform: translateY(-15px) rotate(-6deg); }
+    100% { transform: rotate(0.2deg); }
 }
 
 @keyframes upward {
-    0% {transform: translateY(-3px) rotate(-6deg);}
-    40% {transform: translateY(-15px) rotate(-3deg);}
-    100% {transform: translateY(-30px) rotate(3deg);}
+    0% {transform: translateY(-3px) rotate(-6deg); }
+    40% {transform: translateY(-15px) rotate(-3deg); }
+    100% {transform: translateY(-30px) rotate(3deg); }
+}
+
+@keyframes robo {
+    100% { transform: translateY(2800px) scale(0) rotate(360deg); }
+}
+
+.robo {
+    display: block;
+    position: fixed;
+    top: -15em;
+    left: 43%;
+    animation: robo 5s 1 linear;
+    animation-delay: 180s;
 }
 
 svg {
@@ -414,7 +427,7 @@ footer {
 /* Footer Styling End*/
 
 /* Media Query Adjustments 1900px*/
-@media screen and (max-width: 1900px) {
+@media screen and (max-width: 2150px) {
     .img-otd {
         max-height: 60vh;
         min-height: 56.9vh;
@@ -532,5 +545,10 @@ footer {
     
     .resources a {
         margin: 0 5px;
+    }
+
+    .robo {
+        top: -25em;
+        left: 10%;
     }
 }

@@ -167,4 +167,8 @@ var round = function(num) {
     return num;
 }
 
-//rover image section
+// Sound
+setTimeout(function() {
+    document.querySelector(".ado").play();
+    console.log('your audio is started just now');
+}, 182000);
