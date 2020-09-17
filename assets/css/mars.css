@@ -1,0 +1,43 @@
+.mWeather {
+    padding-top: 20px;
+}
+
+.mCard {
+    width: 10rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 0 10px 0 10px;
+}
+
+.mCard p {
+    line-height: 1;
+    padding: 5px;
+    margin: 0;
+}
+
+.f {
+    margin-bottom: 20px !important;
+}
+
+#solContainer {
+    justify-content: center;
+}
+
+@media screen and (max-width: 1396px) {
+    #solContainer {
+        display: block;
+    }
+
+    .f {
+        text-align: center;
+    }
+
+    .mCard {
+        width: 100%;
+        margin: 0 0 10px 0;
+    }
+
+    .mCard p, .mCard .h5 {
+        font-size: 30px;
+    }
+}

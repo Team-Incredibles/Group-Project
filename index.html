@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css" integrity="sha512-9RIcp1f4CE6dEuYX9085tXaEbYd1ap04d2Av1ub/dwuT33WbfbHStDdQ+shKrp5wzZzleh5DOg+7ABSnaQP/nQ==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css"/>
+    <link rel="icon" type="image/png" href="./assets/images/Logo-1.png" sizes="16x16">
+    <link rel="stylesheet" href="./assets/css/mars.css" />
     <link rel="stylesheet" href="./assets/css/styles.css" />
-    <title>The Space Dash 🌌</title>
+    <title>The Space Dash</title>
 </head>
 <body class="rellax">
 
@@ -48,6 +50,13 @@
             </a>
         </div>
 
+        <!-- Robo Section Area -->
+        <div class="robo">
+            <img src="./assets/images/robo.jpg" alt="R2-D2">
+            <audio class="ado" src="./assets/audio/WEOW"></audio>
+        </div>
+
+        <!-- Floating Rock-2 -->
         <div class="new-rellax floating-rocks rock-2">
             <img src="./assets/images/space-rock-2.jpg" alt="Meteoroid!" class="rock-style-2">
         </div>
@@ -63,6 +72,7 @@
         </div>
     </div>
 
+    <!-- Floating Rock-1 -->
     <div class="new-rellax floating-rocks rock-1">
         <img src="./assets/images/space-rock-1.jpg" alt="Meteoroid!" class="rock-style-1">
     </div>
@@ -72,7 +82,8 @@
         <!-- Fact Area-->
         <div>
             <h2>Space Fact!</h2>
-            <p id="space-facts">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur deserunt ratione debitis ea repellendus alias error? Totam officia error pariatur cupiditate odio nostrum tempora, animi dolore tempore? Iusto, dicta consectetur.</p>
+            <h3 id="factTitle"></h3>
+            <p id="space-facts"></p>
         </div>
     </div>
 
@@ -136,6 +147,10 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div id="dWeather" class="mWeather">
+                    <h4 id="season"></h4>
+                    <div id="solContainer" class="d-flex"></div>
                 </div>
             </div>
         </div>
