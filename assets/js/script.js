@@ -261,7 +261,7 @@ function convert(celsius) {
     return output;
 }
 
-$.getJSON("./assets/js/facts.json", function(data){
+$.getJSON("./assets/js/facts.JSON", function(data){
     var num = Math.floor((Math.random() * 16) + 0);
 
     var factTitle = data.facts[num].title
