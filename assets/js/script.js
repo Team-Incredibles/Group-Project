@@ -14,6 +14,7 @@ var secondRellax = new Rellax('.new-rellax', {
 var today = moment().format('YYYY-MM-DD')
 
 
+
 // To show a Loading Bar while POTD is being fetched and returned
 document.onreadystatechange = function() {
     if (document.readyState === 'complete') {
@@ -76,6 +77,15 @@ $(document).ready(function() {
 $('#add-asteroid').on('click', function () {
     event.preventDefault();
     console.log('Asteroid button clicked');
+
+    var astDate = $('#date').val()
+
+    //if the user has input a date it will run the function
+    if (astDate != '') {
+        neows(astDate);
+    }
+
+    
 });
 
 // Mars Weather section
@@ -119,15 +129,15 @@ var getMars = function() {
                 //date
                 var solToDate = data[sols[i]].First_UTC
 
-                const vals = Object.values(marsData)
-                const keys = Object.keys(marsData)
+                const marsVals = Object.values(marsData)
+                const marsKeys = Object.keys(marsData)
 
                 //sends each number to be rounded
-                for (x = 0; x < vals.length; x++) {
+                for (x = 0; x < marsVals.length; x++) {
 
-                    newVal = round(vals[x])
+                    newVal = round(marsVals[x])
                     
-                    marsData[keys[x]] = newVal
+                    marsData[marsKeys[x]] = newVal
                 
                 }
 
@@ -168,3 +178,65 @@ var round = function(num) {
     return num;
 }
 
+//NeoW section
+//get name -
+//check if meteor is potentially hazardous -
+//get size
+//get speed
+//get miss distance 
+var neows = function(date) {
+
+    fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${date}&end_date=${date}&api_key=${nasaKey}`)
+    .then(function(response) {
+    
+        if (response.ok) {
+            response.json().then(function (data) {
+            
+            var elementCount = data.element_count
+            var asteroids = data.near_earth_objects[date]
+            console.log(`there is data on ${elementCount} asteroids on that date`)
+
+            for (i = 0; i < asteroids.length; i++) {
+
+                var name = asteroids[i].name 
+                var hazard = asteroids[i].is_potentially_hazardous_asteroid  
+                
+                var astData = {
+                    sizeMin: asteroids[i].estimated_diameter.feet.estimated_diameter_min,
+                    sizeMax: asteroids[i].estimated_diameter.feet.estimated_diameter_max,
+                    speed: asteroids[i].close_approach_data[0].relative_velocity.miles_per_hour,
+                    missBy: asteroids[i].close_approach_data[0].miss_distance.miles,
+                }
+
+                const astVals = Object.values(astData)
+                const astKeys = Object.keys(astData)
+
+                //sends each number to be rounded
+                for (x = 0; x < astVals.length; x++) {
+                    
+                    if (astVals[x] > 1) {
+                        newVal = round(astVals[x])
+                        astData[astKeys[x]] = newVal
+                    }
+
+                    
+                }
+
+                buildAst(name, hazard, astData.sizeMin, astData.sizeMax, astData.speed, astData.missBy)
+            }
+                   
+        });
+
+        } else {
+            console.log('error getting asteroids')
+        }
+    })
+    .catch(function(error) {
+        console.log('oops')
+
+    });
+}
+
+var buildAst = function(name, haz, min, max, speed, miss) {
+    console.log(name, haz, min, max, speed, miss)
+}
