@@ -8,3 +8,15 @@ var erase = document.querySelector('#delete');
 form.addEventListener('submit', function (e) {
     e.preventDefault();
 });
+
+submit.addEventListener('click', function() {
+    localStorage.setItem('message', message.value);
+
+    // function
+});
+
+erase.addEventListener('click', function() {
+    localStorage.setItem('message');
+
+    // function
+});
