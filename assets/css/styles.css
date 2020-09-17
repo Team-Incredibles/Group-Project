@@ -158,7 +158,7 @@ body {
 }
 
 .iotd {
-    max-width: 100%;
+    max-height: 680px;
 }
 
 #img-container{
@@ -170,7 +170,16 @@ body {
 iframe {
     border: none;
     flex-grow: 1;
-    min-height: 50vh;
+    max-height: 780px;
+}
+
+.info-area {
+    overflow: auto;
+    max-height: 780px;
+}
+
+.img-otd {
+    max-height: 780px;
 }
 
 .animate-pop-in {
@@ -425,25 +434,6 @@ footer {
     margin: 5px;
 }
 /* Footer Styling End*/
-
-/* Media Query Adjustments 1900px*/
-@media screen and (max-width: 2150px) {
-    .img-otd {
-        max-height: 60vh;
-        min-height: 56.9vh;
-    }
-
-    .iotd {
-        max-height: 50.9vh;
-        width: 100%;
-    }
-
-    .info-area {
-        overflow: auto;
-        min-height: 48.9vh;
-        max-height: 56.9vh;
-    }
-}
 
 /* Media Query Adjustments 992px*/
 @media screen and (max-width: 1396px) {

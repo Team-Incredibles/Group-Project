@@ -170,5 +170,4 @@ var round = function(num) {
 // Sound
 setTimeout(function() {
     document.querySelector(".ado").play();
-    console.log('your audio is started just now');
 }, 182000);
