@@ -375,7 +375,7 @@ $.getJSON("./assets/js/facts.JSON", function(data){
 
     var factTitle = data.facts[num].title
     var factDesc = data.facts[num].description
-
+t 
     $('#factTitle').text(factTitle)
     $('#space-facts').text(factDesc)
 })
