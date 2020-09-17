@@ -13,6 +13,30 @@
     overflow: visible;
 }
 
+.text-copy:nth-child(1) {
+	stroke: #000000;
+	animation-delay: -1s;
+}
+
+.text-copy:nth-child(2) {
+	stroke: #6464af;
+	animation-delay: -2s;
+}
+
+.text-copy:nth-child(3) {
+	stroke: #3cff00;
+	animation-delay: -3s;
+}
+
+.text-copy:nth-child(4) {
+	stroke: #0fe4a4;
+	animation-delay: -4s;
+}
+
+.text-copy:nth-child(5) {
+	stroke: #1e1b4e;
+	animation-delay: -5s;
+}
 /* Resources Styles */
 .flex-row {
     display: flex;
@@ -103,18 +127,36 @@
 
 .api-1 {
     background-image: url("https://images.unsplash.com/photo-1502134249126-9f3755a50d78?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80");
+    background-position: center;
 }
 
 .api-2 {
-    background-image: url("https://images.unsplash.com/photo-1573588028698-f4759befb09a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2090&q=80");
+    background: url("https://images.unsplash.com/photo-1573588028698-f4759befb09a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2090&q=80") center no-repeat;
+    background-size: cover;
 }
 
 .api-3 {
     background-image: url("https://images.unsplash.com/photo-1578309756042-b445687e326c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80");
+    background-position: center;
 }
 
 /* Future Self Textbox Styling */
 .future-self, .future-self p {
     color: white;
     display: flex;
-} 
+}
+
+@media screen and (max-width: 1396px) {
+    .hero {
+        padding: 10px;
+    }
+
+    .hero p {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    text {
+        font-size: 30px;
+    }
+}
