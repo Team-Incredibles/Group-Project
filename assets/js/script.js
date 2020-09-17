@@ -13,6 +13,7 @@ var secondRellax = new Rellax('.new-rellax', {
 
 var today = moment().format('YYYY-MM-DD')
 
+var astNum = 0
 
 
 // To show a Loading Bar while POTD is being fetched and returned
@@ -76,7 +77,7 @@ $(document).ready(function() {
 // Asteroid Section
 $('#add-asteroid').on('click', function () {
     event.preventDefault();
-    console.log('Asteroid button clicked');
+    $('#astContainer').empty()
 
     var astDate = $('#date').val()
 
@@ -91,7 +92,7 @@ $('#add-asteroid').on('click', function () {
 // Mars Weather section
 $('#add-weather').on('click', function() {
     event.preventDefault();
-    console.log('Weather button clicked');
+    $('#solContainer').empty();
     getMars();
 });
 
@@ -110,7 +111,7 @@ var getMars = function() {
             
             sols = data.sol_keys
             var season = data[sols[sols.length - 1]].Season 
-            console.log(`It is currently ${season} at the insight weather station on Mars!`)
+            $('#season').text(`It is currently ${season} at Elysium Planitia on Mars`)
 
             //loop that gets data for sols[i] then sends it to a function to build it on the page.
             for (i = 0; i < sols.length; i++) {
@@ -123,7 +124,6 @@ var getMars = function() {
                     minTempOnSol: data[sols[i]].AT.mn,
                     maxTempOnSol: data[sols[i]].AT.mx,
 
-                    
                 }
 
                 //date
@@ -135,10 +135,17 @@ var getMars = function() {
                 //sends each number to be rounded
                 for (x = 0; x < marsVals.length; x++) {
 
-                    newVal = round(marsVals[x])
-                    
+
+
+                    //there is no data for that date it will be set to a dash
+                    if (marsVals[x] === null || marsVals[x] === '' || marsVals[x] === 'null') {
+                        newVal = '-'
+                    } else {
+                        newVal = round(marsVals[x])
+                    }
+
                     marsData[marsKeys[x]] = newVal
-                
+                    
                 }
 
                 //formats date
@@ -148,7 +155,7 @@ var getMars = function() {
                 
 
                 //sends data to be displayed 
-                buildMars(sols[i], marsData.avgTempOnSol, marsData.minTempOnSol, marsData.maxTempOnSol, dateToMoment, season)
+                buildMars(sols[i], marsData.avgTempOnSol, marsData.minTempOnSol, marsData.maxTempOnSol, dateToMoment)
  
             }
 
@@ -165,17 +172,15 @@ var getMars = function() {
 }
 
 //displays data
-var buildMars = function(sol, avgAT, minAT, maxAT, date, season) {
+var buildMars = function(sol, avg, min, max, date) {
     
-    console.log(`Temps on sol ${sol} (${date}) Avg = ${avgAT}°C | Min = ${minAT}°C | Max = ${maxAT}°C`)
-    
-}
+    //coverts celsius data to fahrenheit
+    avgF = convert(avg)
+    minF = convert(min)
+    maxF = convert(max)
 
-//rounds number to nearest whole
-var round = function(num) {
-    parseInt(num)
-    var num = Math.round(num)
-    return num;
+    $('#solContainer').append(`<div class="mCard card"><div class="card-header"><div class="card-title h5">Sol ${sol}</div><div class="card-subtitle text-gray h5">${date}</div></div><div class="card-body"><p id="avg">Avg: ${avg}°C</p><p class="f text-gray">${avgF}°F</p><p id="min">Min: ${min}°C</p><p class="f text-gray">${minF}°F</p><p id="max">Max: ${max}°C</p><p class="f text-gray">${maxF}°F</p></div></div>`)
+    
 }
 
 //NeoW section
@@ -194,8 +199,9 @@ var neows = function(date) {
             
             var elementCount = data.element_count
             var asteroids = data.near_earth_objects[date]
-            console.log(`there is data on ${elementCount} asteroids on that date`)
 
+            $('#elCount').text(`There is ${elementCount} asteroids on that date!`)
+            
             for (i = 0; i < asteroids.length; i++) {
 
                 var name = asteroids[i].name 
@@ -222,8 +228,14 @@ var neows = function(date) {
                     
                 }
 
+                astNum++
                 buildAst(name, hazard, astData.sizeMin, astData.sizeMax, astData.speed, astData.missBy)
             }
+            
+
+            
+              
+
                    
         });
 
@@ -238,5 +250,77 @@ var neows = function(date) {
 }
 
 var buildAst = function(name, haz, min, max, speed, miss) {
-    console.log(name, haz, min, max, speed, miss)
+
+    const astroidTable = `
+    <div class="accordion">
+    <input type="checkbox" id="accordion-${astNum}" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="accordion-${astNum}">
+    <span class="oi oi-chevron-right icon"></span>
+    ${name}
+    </label>
+    <div class="accordion-body">
+    <table>
+    <tr>    
+    <td>Potentially hazardous:</td>
+    <td>${haz}</td>
+    </tr>
+    <tr>
+    <td>Smallest Diameter:</td>
+    <td>${formatNumber(min)} Feet</td>
+    </tr>
+    <tr>             
+    <td>Largest Diameter:</td>
+    <td>${formatNumber(max)} Feet</td>
+    </tr>
+    <tr>                      
+    <td >Speed:</td>
+    <td >${formatNumber(speed)} MPH</td>
+    </tr>
+    <tr>                         
+    <td>Will miss Earth by:</td>
+    <td>${formatNumber(miss)} Miles</td>
+    </tr>
+    </table>
+    </div>
+    </div>
+    `
+
+    $('#astContainer').append(astroidTable)
 }
+
+//rounds number to nearest whole
+var round = function(num) {
+    parseInt(num)
+    var num = Math.round(num)
+    return num;
+}
+
+
+//converts celsius to fahrenheit 
+function convert(celsius) {
+    var toF = celsius * 9 / 5 + 32;
+    var output = Math.round(toF);
+    return output;
+}
+
+//sets the random fact
+$.getJSON("./assets/js/facts.json", function(data){
+    var num = Math.floor((Math.random() * 16) + 0);
+
+    var factTitle = data.facts[num].title
+    var factDesc = data.facts[num].description
+
+    $('#factTitle').text(factTitle)
+    $('#space-facts').text(factDesc)
+})
+
+//formats large numbers
+function formatNumber(num) {
+    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+}
+
+
+
+
+
+

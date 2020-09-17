@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css"/>
     <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="stylesheet" href="./assets/css/mars.css" />
     <title>The Space Dash 🌌</title>
 </head>
 <body class="rellax">
@@ -72,7 +73,8 @@
         <!-- Fact Area-->
         <div>
             <h2>Space Fact!</h2>
-            <p id="space-facts">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur deserunt ratione debitis ea repellendus alias error? Totam officia error pariatur cupiditate odio nostrum tempora, animi dolore tempore? Iusto, dicta consectetur.</p>
+            <h3 id="factTitle"></h3>
+            <p id="space-facts"></p>
         </div>
     </div>
 
@@ -96,7 +98,7 @@
                                 <!-- Asteroid Pop-Over Description -->
                                 <p>This API grabs information from Nasa's
                                 NeoWs (Near Earth Object Web Service) with updated information on close-by Asteroids
-                                on a specific date and data for the following 7 days.
+                                on any specific date.
                                 </p>
                             </div>
                             <div class="card-footer">
@@ -105,6 +107,10 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <p id='elCount'></p>
+                <div id="astContainer">
                 </div>
             </div>           
 
@@ -135,6 +141,11 @@
                             <a href="https://mars.nasa.gov/insight/weather/" target="_blank">More Info Here!</a>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div id="dWeather" class="mWeather">
+                    <h4 id="season"></h4>
+                    <div id="solContainer" class="d-flex">
                     </div>
                 </div>
             </div>
