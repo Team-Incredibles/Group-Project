@@ -23,6 +23,8 @@ ii. Dedicated Styling & Re-Work. _**Space Dash**_ styling is using [**SVG**](htt
 ![svg-gif](https://user-images.githubusercontent.com/67067481/93422355-37419e80-f879-11ea-868d-42cb0c855a38.gif)
 ![ScreenShot](https://user-images.githubusercontent.com/67067481/93422440-69eb9700-f879-11ea-9313-aab029bba308.PNG)
 
- iii. After extended testing, complete animations, custom backgrounds, non-copyright images, custom [Keyframe](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes) animations, and [Parallax Animation](https://dixonandmoe.com/rellax/) were added for enhancement.
+ iii. After extended testing, complete animations, custom backgrounds, non-copyright images, custom [**Keyframe**](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes) animations, and [**Parallax Animation**](https://dixonandmoe.com/rellax/) were added for enhancement.
 
  ![The Space Dash](https://user-images.githubusercontent.com/67067481/93424636-0152e900-f87e-11ea-9fbe-5ef5d967bb7e.gif)
+
+4. Furthermore, JavaScript is added for functionality. [**jQuery**](https://developer.mozilla.org/en-US/docs/Glossary/jQuery) is mainly used in our JS code to shorten the amount needed written. Our JS consists of [**for**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) loops, [**variables**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var) for specific functions, creating / [**appending**](https://api.jquery.com/append/#append-content-content) elements, concise [**error handling**](https://api.jquery.com/error/#error-handler), and much needed _complex_ [$**jQuery**](https://jquery.com/).
