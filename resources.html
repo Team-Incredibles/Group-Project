@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,13 +11,13 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
     <link rel="stylesheet" href="./assets/css/styles.css" />
-    <link rel="stylesheet" href="./assets/css/secondaryStyles.css"> <!-- Title -->
-    <title>Space Dash - Resources and Citing</title>
+    <link rel="stylesheet" href="./assets/css/secondaryStyles.css" /> 
+    <!-- Title -->
+    <title>The Space Dash 🌌 Resources</title>
 </head>
-
 <body>
     <!-- Hero Area -->
-    <div class="hero bg-gray">
+    <div class="hero">
         <div class="hero-body" id="#">
             <div>
                 <img src="./assets/images/Logo-1.png" alt="Website Space-Ship Logo"
@@ -26,9 +25,9 @@
             </div>
             <!-- Space Dash has been manipulated as an SVG to allow Animation-->
             <a href="./index.html">
-                <svg viewBox="0 0 300 20">
+                <svg viewBox="0 0 300 30">
                     <symbol id="s-text">
-                        <text text-anchor="middle" x="56.6%" y="80%">Space Dash</text>
+                        <text text-anchor="middle" x="56.6%" y="80%">👽</text>
                     </symbol>
                     <g class="g-ants">
                         <use xlink:href="#s-text" class="text-copy"></use>
@@ -39,17 +38,15 @@
                     </g>
                 </svg>
             </a>
-            <p class="animate-pop-in">Galactic Information with Ease</p>
+            <p class="animate-pop-in">To Go Back</p>
             <div class="flexbox-break-banner-logo">
             </div>
         </div>
     </div>
-
     <!-- Resources  -->
     <div class="flex-row">
         <h2 class="rsrc-title">Resources Used in the Space Dash</h2>
     </div>
-
     <!-- APOD API -->
     <article class="nasaApi">
         <div class="nasa-img api-1">
@@ -63,12 +60,10 @@
         </div>
         <div class="rsrc-bio">
             <p>
-                Our team used this API to pull the images you see in "Image of the Day!"<br>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt suscipit veniam voluptas. Obcaecati a molestias animi quo labore. Ipsam quia, odit fugit amet quasi dignissimos id atque sint itaque praesentium.
+                This API generates a different image of our infinite universe, and offers an explanation written by a professional astronomer.
             </p>
         </div>
     </article>
-
     <!-- InSight API -->
     <article class="nasaApi">
         <div class="nasa-img api-2">
@@ -82,11 +77,11 @@
         <div class="rsrc-bio">
             <p>
                 Gravity got you down? Mars can relate to feeling low.<br>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum fugiat atque eius necessitatibus tempora accusantium nobis autem architecto saepe distinctio! Laudantium nulla quae repudiandae fugiat illo exercitationem. Nihil, tempora officia.
+                This API grabs information from Nasa's InSight Mars lander taking continuous weather measurements on the
+                surface of Mars at Elysium Planitia.
             </p>
         </div>
     </article>
-
     <!-- Asteroid NeoWS API -->
     <article class="nasaApi">
         <div class="nasa-img api-3">
@@ -97,22 +92,36 @@
         </div>
         <div class="rsrc-bio">
             <p>
-                You rock! Our team wanted to show your closest competition.<br>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt exercitationem eum molestiae magnam accusamus voluptate voluptatem, fugiat autem sed neque maxime laboriosam doloribus libero qui, necessitatibus sunt deleniti obcaecati aut!
+                You rock! Our team wanted to show your closest competition.<br>This API grabs information from Nasa's
+                NeoWs (Near Earth Object Web Service) with updated information on close-by Asteroids on a specific date
+                and data for the following 7 days.
             </p>
         </div>
+        <form>
+            <div class="remember">
+                <label for="message">Leave a message for your future-self</label>
+                <input type="text" id="message" required />
+                <input type="submit" id="submit" value="Submit" >
+            </div>
+            <div class="forget">
+                <label for="delete">Delete History</label>
+                <input type="reset" id="delete" value="Erase">
+            </div>
+        </form>
     </article>
 
-        <!-- Footer Area -->
-        <footer class="footer">
-            <div class="footer-line">
-                <a href="#" class="logo-area"><img src="./assets/images/Logo-1.png" alt="Website Space-Ship Logo" class="logo-2 animate__animated animate__rollIn"></a>
-            </div>
-            <!-- Links to Resources-->
-            <div class="resources">
-                <a href="https://github.com/Team-Incredibles/Group-Project" target="_blank">Made With ❤️ by Team Incredibles</a>
-            </div>
-        </footer>
+    <!-- Footer Area -->
+    <footer class="footer">
+        <div class="footer-line">
+            <a href="#" class="logo-area"><img src="./assets/images/Logo-1.png" alt="Website Space-Ship Logo"
+                    class="logo-2 animate__animated animate__rollIn"></a>
+        </div>
+        <!-- Links to Resources-->
+        <div class="resources">
+            <a href="https://github.com/Team-Incredibles/Group-Project" target="_blank">Made With ❤️ by Team
+                Incredibles</a>
+        </div>
+    </footer>
 </body>
 
 </html>
