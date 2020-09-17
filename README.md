@@ -17,12 +17,12 @@ Hello World, welcome to Space Dash.
 2.  In creating the HTML, the main focus was concrete structure. We wanted to make sure our **CSS** and **JavaScript** were going to forge well. The **HTML** was completed with detailed commenting, corresponding/concise classes and IDs, and easy to read spacing for [**Open Source**](https://opensource.com/resources/what-open-source). 
 
 3. Next, the **CSS** styling was commenced. The CSS styling was focused completely on representation and how we could blend convenience, education, and fun. With this, the CSS process began as below.
-> i. Our main CSS FrameWork [**Spectre**](https://picturepan2.github.io/spectre/index.html), Animations, and APIs chosen. Also, Blending and Layout checked && [**Media Query**](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries) Began
+i. Our main CSS FrameWork [**Spectre**](https://picturepan2.github.io/spectre/index.html), Animations, and APIs chosen. Also, Blending and Layout checked && [**Media Query**](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries) Began
 ![ScreenShot](https://user-images.githubusercontent.com/67067481/93421621-7b33a400-f877-11ea-92c6-6995c510a313.png)
-> ii. Dedicated Styling & Re-Work. _**Space Dash**_ styling is using [**SVG**](https://developer.mozilla.org/en-US/docs/Web/SVG) Practice [_**Here**_](https://jsfiddle.net/0cLrmn4e/)
+ii. Dedicated Styling & Re-Work. _**Space Dash**_ styling is using [**SVG**](https://developer.mozilla.org/en-US/docs/Web/SVG) Practice [_**Here**_](https://jsfiddle.net/0cLrmn4e/)
 ![svg-gif](https://user-images.githubusercontent.com/67067481/93422355-37419e80-f879-11ea-868d-42cb0c855a38.gif)
 ![ScreenShot](https://user-images.githubusercontent.com/67067481/93422440-69eb9700-f879-11ea-9313-aab029bba308.PNG)
 
-iii. After extended testing, complete animations, custom backgrounds, non-copyright images, custom [Keyframe](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes) animations, and [Parallax Animation](https://dixonandmoe.com/rellax/) were added for enhancement.
+ iii. After extended testing, complete animations, custom backgrounds, non-copyright images, custom [Keyframe](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes) animations, and [Parallax Animation](https://dixonandmoe.com/rellax/) were added for enhancement.
 
-![The Space Dash](https://user-images.githubusercontent.com/67067481/93424636-0152e900-f87e-11ea-9fbe-5ef5d967bb7e.gif)
+ ![The Space Dash](https://user-images.githubusercontent.com/67067481/93424636-0152e900-f87e-11ea-9fbe-5ef5d967bb7e.gif)
