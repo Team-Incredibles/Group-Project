@@ -13,6 +13,8 @@ var secondRellax = new Rellax('.new-rellax', {
 
 var today = moment().format('YYYY-MM-DD')
 
+var astNum = 0
+
 
 
 // To show a Loading Bar while POTD is being fetched and returned
@@ -76,7 +78,8 @@ $(document).ready(function() {
 // Asteroid Section
 $('#add-asteroid').on('click', function () {
     event.preventDefault();
-    console.log('Asteroid button clicked');
+    $('#astContainer').empty()
+
 
     var astDate = $('#date').val()
 
@@ -134,8 +137,6 @@ var getMars = function() {
                 //sends each number to be rounded
                 for (x = 0; x < marsVals.length; x++) {
 
-
-
                     //there is no data for that date it will be set to a dash
                     if (marsVals[x] === null || marsVals[x] === '' || marsVals[x] === 'null') {
                         newVal = '-'
@@ -172,15 +173,15 @@ var getMars = function() {
 
 //displays data
 var buildMars = function(sol, avg, min, max, date) {
+
     
+    //coverts celsius data to fahrenheit
     avgF = convert(avg)
     minF = convert(min)
     maxF = convert(max)
 
-    
-
     $('#solContainer').append(`<div class="mCard card"><div class="card-header"><div class="card-title h5">Sol ${sol}</div><div class="card-subtitle text-gray h5">${date}</div></div><div class="card-body"><p id="avg">Avg: ${avg}°C</p><p class="f text-gray">${avgF}°F</p><p id="min">Min: ${min}°C</p><p class="f text-gray">${minF}°F</p><p id="max">Max: ${max}°C</p><p class="f text-gray">${maxF}°F</p></div></div>`)
-    
+  
 }
 
 //NeoW section
@@ -193,6 +194,7 @@ var neows = function(date) {
 
     fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${date}&end_date=${date}&api_key=${nasaKey}`)
     .then(function(response) {
+
     
         if (response.ok) {
             response.json().then(function (data) {
@@ -246,6 +248,111 @@ var buildAst = function(name, haz, min, max, speed, miss) {
     console.log(name, haz, min, max, speed, miss)
 }
 
+//NeoW section
+//get name -
+//check if meteor is potentially hazardous -
+//get size
+//get speed
+//get miss distance 
+var neows = function(date) {
+
+    fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${date}&end_date=${date}&api_key=${nasaKey}`)
+    .then(function(response) {
+    
+        if (response.ok) {
+            response.json().then(function (data) {
+            
+            var elementCount = data.element_count
+            var asteroids = data.near_earth_objects[date]
+
+            $('#elCount').text(`There is ${elementCount} asteroids on that date!`)
+            
+            for (i = 0; i < asteroids.length; i++) {
+
+                var name = asteroids[i].name 
+                var hazard = asteroids[i].is_potentially_hazardous_asteroid  
+                
+                var astData = {
+                    sizeMin: asteroids[i].estimated_diameter.feet.estimated_diameter_min,
+                    sizeMax: asteroids[i].estimated_diameter.feet.estimated_diameter_max,
+                    speed: asteroids[i].close_approach_data[0].relative_velocity.miles_per_hour,
+                    missBy: asteroids[i].close_approach_data[0].miss_distance.miles,
+                }
+
+                const astVals = Object.values(astData)
+                const astKeys = Object.keys(astData)
+
+                //sends each number to be rounded
+                for (x = 0; x < astVals.length; x++) {
+                    
+                    if (astVals[x] > 1) {
+                        newVal = round(astVals[x])
+                        astData[astKeys[x]] = newVal
+                    }
+
+                    
+                }
+
+                astNum++
+                buildAst(name, hazard, astData.sizeMin, astData.sizeMax, astData.speed, astData.missBy)
+            }
+            
+
+            
+              
+
+                   
+        });
+
+        } else {
+            console.log('error getting asteroids')
+        }
+    })
+    .catch(function(error) {
+        console.log('oops')
+
+    });
+}
+
+var buildAst = function(name, haz, min, max, speed, miss) {
+
+    const astroidTable = `
+    <div class="accordion">
+    <input type="checkbox" id="accordion-${astNum}" name="accordion-checkbox" hidden>
+    <label class="accordion-header" for="accordion-${astNum}">
+    <span class="oi oi-chevron-right icon"></span>
+    ${name}
+    </label>
+    <div class="accordion-body">
+    <table>
+    <tr>    
+    <td>Potentially hazardous:</td>
+    <td>${haz}</td>
+    </tr>
+    <tr>
+    <td>Smallest Diameter:</td>
+    <td>${formatNumber(min)} Feet</td>
+    </tr>
+    <tr>             
+    <td>Largest Diameter:</td>
+    <td>${formatNumber(max)} Feet</td>
+    </tr>
+    <tr>                      
+    <td >Speed:</td>
+    <td >${formatNumber(speed)} MPH</td>
+    </tr>
+    <tr>                         
+    <td>Will miss Earth by:</td>
+    <td>${formatNumber(miss)} Miles</td>
+    </tr>
+    </table>
+    </div>
+    </div>
+    `
+
+    $('#astContainer').append(astroidTable)
+}
+
 //rounds number to nearest whole
 var round = function(num) {
     parseInt(num)
@@ -261,7 +368,9 @@ function convert(celsius) {
     return output;
 }
 
-$.getJSON("./assets/js/facts.JSON", function(data){
+
+//sets the random fact
+$.getJSON("./assets/js/facts.json", function(data){
     var num = Math.floor((Math.random() * 16) + 0);
 
     var factTitle = data.facts[num].title
@@ -270,6 +379,12 @@ $.getJSON("./assets/js/facts.JSON", function(data){
     $('#factTitle').text(factTitle)
     $('#space-facts').text(factDesc)
 })
+
+
+//formats large numbers
+function formatNumber(num) {
+    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+}
 
 // Sound
 setTimeout(function() {
