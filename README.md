@@ -12,7 +12,7 @@ Hello World, welcome to Space Dash.
 
 ### How We Did It
 1.  First was the drawing board. We began by brainstorming sketches, layout, and possible outcomes for the result of the project.
-> **Beginning Layout** ![ScreenShot](https://user-images.githubusercontent.com/67067481/93419827-6d7c1f80-f873-11ea-9359-72555de2f7b0.png)
+> ![ScreenShot](https://user-images.githubusercontent.com/67067481/93419827-6d7c1f80-f873-11ea-9359-72555de2f7b0.png)
 
 2.  In creating the HTML, the main focus was concrete structure. We wanted to make sure our **CSS** and **JavaScript** were going to forge well. The **HTML** was completed with detailed commenting, corresponding/concise classes and IDs, and easy to read spacing for [**Open Source**](https://opensource.com/resources/what-open-source). 
 
