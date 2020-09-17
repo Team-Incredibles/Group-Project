@@ -22,4 +22,5 @@ Hello World, welcome to Space Dash.
 > ii. Dedicated Styling & Re-Work. _**Space Dash**_ styling is using [**SVG**](https://developer.mozilla.org/en-US/docs/Web/SVG) Practice [_**Here**_](https://jsfiddle.net/0cLrmn4e/)
 ![svg-gif](https://user-images.githubusercontent.com/67067481/93422355-37419e80-f879-11ea-868d-42cb0c855a38.gif)
 ![ScreenShot](https://user-images.githubusercontent.com/67067481/93422440-69eb9700-f879-11ea-9313-aab029bba308.PNG)
+ 
  > iii. After extended testing, complete animations, custom backgrounds, non-copyright images, custom [Keyframe](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes) animations, and [Parallax Animation](https://dixonandmoe.com/rellax/) were added for enhancement.![The Space Dash](https://user-images.githubusercontent.com/67067481/93424636-0152e900-f87e-11ea-9fbe-5ef5d967bb7e.gif)
