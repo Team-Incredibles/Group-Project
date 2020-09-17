@@ -4,3 +4,7 @@ var form = document.querySelector('form');
 var message = document.querySelector('#message');
 var submit = document.querySelector('#submit');
 var erase = document.querySelector('#delete');
+
+form.addEventListener('submit', function (e) {
+    e.preventDefault();
+});
