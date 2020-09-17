@@ -261,8 +261,15 @@ function convert(celsius) {
     return output;
 }
 
+$.getJSON("./assets/js/facts.json", function(data){
+    num  = Math.floor((Math.random() * 17) + 0);
 
+    factTitle = data.facts[num].title
+    factDesc = data.facts[num].description
 
+    $('#factTitle').text(factTitle)
+    $('#space-facts').text(factDesc)
+})
 
 
 
