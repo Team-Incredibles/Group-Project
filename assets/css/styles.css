@@ -483,12 +483,14 @@ footer {
     .img-otd {
         max-height: none;
         min-height: 100%;
+        
     }
 
     .iotd {
         max-height: none;
         width: 100%;
         min-height: none;
+        
     }
 
     .logo-image {
