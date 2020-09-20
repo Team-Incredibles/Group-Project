@@ -166,7 +166,9 @@ var getMars = function() {
         }
     })
     .catch(function(error) {
+        $('#season').append("Sorry! Looks like there was an error fetching the data from NASA's API. You may have a bad connection or it may be down for maintenance.<br/> " + error)
         
+        $('#solContainer').append('<img src="./assets/images/alien.png"/>')
 
     });
 }
@@ -194,70 +196,6 @@ var neows = function(date) {
 
     fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${date}&end_date=${date}&api_key=${nasaKey}`)
     .then(function(response) {
-
-    
-        if (response.ok) {
-            response.json().then(function (data) {
-            
-            var elementCount = data.element_count
-            var asteroids = data.near_earth_objects[date]
-            console.log(`there is data on ${elementCount} asteroids on that date`)
-
-            for (i = 0; i < asteroids.length; i++) {
-
-                var name = asteroids[i].name 
-                var hazard = asteroids[i].is_potentially_hazardous_asteroid  
-                
-                var astData = {
-                    sizeMin: asteroids[i].estimated_diameter.feet.estimated_diameter_min,
-                    sizeMax: asteroids[i].estimated_diameter.feet.estimated_diameter_max,
-                    speed: asteroids[i].close_approach_data[0].relative_velocity.miles_per_hour,
-                    missBy: asteroids[i].close_approach_data[0].miss_distance.miles,
-                }
-
-                const astVals = Object.values(astData)
-                const astKeys = Object.keys(astData)
-
-                //sends each number to be rounded
-                for (x = 0; x < astVals.length; x++) {
-                    
-                    if (astVals[x] > 1) {
-                        newVal = round(astVals[x])
-                        astData[astKeys[x]] = newVal
-                    }
-
-                    
-                }
-
-                buildAst(name, hazard, astData.sizeMin, astData.sizeMax, astData.speed, astData.missBy)
-            }
-                   
-        });
-
-        } else {
-            console.log('error getting asteroids')
-        }
-    })
-    .catch(function(error) {
-        console.log('oops')
-
-    });
-}
-
-var buildAst = function(name, haz, min, max, speed, miss) {
-    console.log(name, haz, min, max, speed, miss)
-}
-
-//NeoW section
-//get name -
-//check if meteor is potentially hazardous -
-//get size
-//get speed
-//get miss distance 
-var neows = function(date) {
-
-    fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${date}&end_date=${date}&api_key=${nasaKey}`)
-    .then(function(response) {
     
         if (response.ok) {
             response.json().then(function (data) {
@@ -267,7 +205,7 @@ var neows = function(date) {
 
             $('#elCount').text(`There is ${elementCount} asteroids on that date!`)
             
-            for (i = 0; i < asteroids.length; i++) {
+            for (i = 0; i < elementCount; i++) {
 
                 var name = asteroids[i].name 
                 var hazard = asteroids[i].is_potentially_hazardous_asteroid  
@@ -295,22 +233,16 @@ var neows = function(date) {
 
                 astNum++
                 buildAst(name, hazard, astData.sizeMin, astData.sizeMax, astData.speed, astData.missBy)
-            }
-            
-
-            
-              
-
-                   
+            }         
         });
-
         } else {
-            console.log('error getting asteroids')
+            $('#elCount').text("Sorry! Looks like there was an error fetching the data from NASA's API. It may be down for maintenance")
         }
     })
     .catch(function(error) {
-        console.log('oops')
-
+        $('#elCount').append("Sorry! Looks like there was an error fetching the data from NASA's API. You may have a bad connection or it may be down for maintenance.<br/> " + error)
+        
+        $('#astContainer').append('<img src="./assets/images/alien.png"/>')
     });
 }
 
@@ -386,7 +318,15 @@ function formatNumber(num) {
     return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 }
 
+var checkDate = function() {
+    if ($('#date').val() === ''){
+        $('#date').val(today)
+    }
+}
+
 // Sound
 setTimeout(function() {
     document.querySelector(".ado").play();
 }, 182000);
+
+checkDate()
