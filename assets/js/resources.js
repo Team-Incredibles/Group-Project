@@ -5,6 +5,9 @@ var message = document.querySelector('#message');
 var submit = document.querySelector('#submit');
 var erase = document.querySelector('#delete');
 
+const h1 = document.querySelector('h1');
+const msg = document.querySelector('.msg');
+
 form.addEventListener('submit', function (e) {
     e.preventDefault();
 });
@@ -12,11 +15,27 @@ form.addEventListener('submit', function (e) {
 submit.addEventListener('click', function() {
     localStorage.setItem('message', message.value);
 
-    // function
+    displayMessage;
 });
 
 erase.addEventListener('click', function() {
     localStorage.setItem('message');
 
-    // function
+    displayMessage;
 });
+
+function displayMessage() {
+    if (localStorage.getItem('message')) {
+        let message = localStorage.getItem('message');
+        h1.textContent = 'Note to Self: ${message}';
+        msg.textContent = '';
+        forget.style.display = 'block';
+        remember.style.display = 'none';
+    } else {
+        h1.textContent = 'Leave a Message for Your Future Self:';
+        msg.textContent = '';
+
+        forget.style.display = 'none';
+        remember.style.display = 'block';
+    }
+}
