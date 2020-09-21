@@ -26,12 +26,12 @@ erase.addEventListener('click', function() {
 function displayMessage() {
     if (localStorage.getItem('message')) {
         let message = localStorage.getItem('message');
-        h1.textContent = 'Note to Self: ${message}';
+        h1.textContent = `Note to Self: ${message}`;
 
         forget.style.display = 'block';
         remember.style.display = 'none';
     } else {
-        h1.textContent = 'Leave a Message for Your Future Self:';
+        h1.textContent = `Leave a Message for Your Future Self:`;
 
         forget.style.display = 'none';
         remember.style.display = 'block';
